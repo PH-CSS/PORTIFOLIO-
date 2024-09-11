@@ -1,0 +1,1 @@
+Pasta escolar para independente do momento tenha tudo salvo

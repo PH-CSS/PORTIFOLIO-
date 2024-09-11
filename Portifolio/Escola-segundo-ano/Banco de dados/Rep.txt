@@ -1,0 +1,4 @@
+1, Paulo, Diretor, 20000, janeiro
+2, Paulo, vendedor, 5000, fevereiro
+3, Paulo, produtor, 2800, outubro
+

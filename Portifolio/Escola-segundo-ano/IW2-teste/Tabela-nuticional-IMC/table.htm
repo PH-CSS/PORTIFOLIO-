@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,400,0,0" />
+    <link rel="stylesheet"
+        href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
+</head>
+
+<body>
+
+    <style>
+        body {
+            display: grid;
+            place-items: center;
+            font-size: 2rem;
+        }
+
+        
+        td,
+        th,
+        tfoot {
+            border-bottom: solid 1px #000;
+            padding: 10px;
+            border-radius: 5px;
+            
+        }
+
+      
+
+       
+
+        table{
+            width: 70%;
+        
+        }
+
+        th {
+            background-color: #999;
+        }
+
+        caption {
+            font-size: x-large;
+        }
+
+        
+        tr:hover{
+            background-color: #F60;
+        }
+        td:hover{
+            background-color: rgb(208, 133, 83);
+        }
+
+
+
+        
+
+        .coluna1 {
+            background: rgb(114, 106, 106);
+            
+        }
+
+        .coluna2 {
+            background: #F33;
+        }
+
+        .coluna3 {
+            background: #F99;
+        }
+
+         .material-symbols-outlined {
+            display: grid;
+            place-items: center;
+            width: 50px;
+
+            font-size: 3rem;
+            background-color: rgb(255, 0, 0, 0.5);
+            border-radius: 50%;
+            cursor: pointer;
+        }
+        input{
+            font-size: 2rem;
+            border: none;
+            background-color: transparent;
+            
+        }
+
+        input::placeholder{
+            color: rgb(63, 63, 63);
+        }
+
+        .invalido input::placeholder{
+            color: #F33;
+        }
+
+        .bb {
+    margin-top: 50px;
+    background-color: #F60;
+}
+
+.sui{
+    border: none;
+}
+    .sui:hover{
+        background-color: white;
+    }
+
+    tr:hover .sui{
+        background-color: #fff;
+    }
+
+
+
+    </style>
+
+    <script src="script.js" defer></script>
+
+    <table>
+        <colgroup span="4"></colgroup>
+        <tr>
+            <th>Nome</th>
+            <th>Altura</th>
+            <th>Peso</th>
+            <th>IMC</th>
+        </tr>
+
+        <tr id="paciente">
+            <td><input class="infoNome" value="" type="text" placeholder="insira o nome.."></td>
+            <td> <input class="infoAltura" value="" type="text" placeholder="insira a altura.."></td>
+            <td> <input class="infoPeso" value="" type="text" placeholder="insira o peso.."></td>
+            <td class="infoImc"> </td>
+            <td class="sui"><span class=" material-symbols-outlined">
+                close
+                </span> </td>
+        </tr>
+
+
+    </table>
+
+    <span class="bb material-symbols-outlined">
+        add
+    </span>
+
+
+</body>
+
+</html>

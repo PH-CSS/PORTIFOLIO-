@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ex3</title>
+</head>
+
+<body>
+    <script>
+        var produto = parseFloat(prompt("Digite o valor do produto:"));
+        var desconto = parseFloat(prompt("Digite quantos % esse produto tem de desconto:"));
+
+        var res = produto - ((produto * desconto) / 100);
+
+        // 100 - ((100*10) / 100)
+        alert(`O valor a ser pago com desconto é de:  R$ ${res.toFixed(2)} ` );
+    </script>
+</body>
+
+</html>

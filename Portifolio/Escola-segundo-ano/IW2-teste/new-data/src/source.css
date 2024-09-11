@@ -1,0 +1,136 @@
+@font-face {
+    font-family: DS-Digital;
+    src: url(DS-DIGI.TTF);
+}
+
+body{
+    overflow: hidden;
+    width: 100vw;
+    height: 100vh;
+    display: grid;
+    place-items: center;
+    font-size: 9rem;
+    font-family: DS-Digital;
+    font-weight: 900;
+}
+
+.alinhamento{
+    display: flex;
+    width: fit-content;
+    letter-spacing: 10px;
+} 
+.alinhamento section{
+    display: grid;
+    place-items: center;
+    padding-left: 5vw;
+}
+
+.alinha{
+    display: flex;
+    width: fit-content;
+    letter-spacing: 10px;
+}
+
+.alinha section{
+    display: grid;
+    place-items: center;
+    padding-left: 5vw;
+}
+
+.temp{
+    display: grid;
+    place-items: center;
+    cursor: pointer;
+   /* rotate: 180deg; */
+    width: 80px;
+    height: 80px;
+    background-color: rgb(0, 0, 0);
+    border-radius: 100%;
+    font-size: 2rem;
+    color: white;
+    font-family:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    rotate: 180deg;
+    transition: all 0.7s;
+}
+
+.days{
+    font-size: 5rem;
+    display: flex;
+    width: fit-content;
+    letter-spacing: 10px;
+} 
+.days section{
+    display: grid;
+    place-items: center;
+    padding-left: 5vw;
+}
+
+
+#whhat{
+    rotate: 0deg;
+    transition: all 0.7s;
+
+}
+
+#newInf{
+    display: grid;
+    place-items: center;
+    overflow-x: hidden;
+    overflow-y: auto;
+    scroll-behavior: smooth;
+    scroll-snap-align: center ;
+    width: 600px;
+    height: 200px;
+    background-color: rgb(0, 0, 0);
+    border-radius: 25px;    
+    padding: 25px;
+    transform: translateY(200px) ;
+    visibility: hidden;
+    opacity: 0;
+}
+
+
+#newInf:has(.stacks:hover) :not(:hover)  {
+    transition: all 0.7s;
+    opacity: 0.1;
+}
+
+.stacks{
+    display: grid;
+    place-items: center;
+    color: aliceblue;
+    width: 100%;
+    height: fit-content;
+    cursor: pointer;
+    transition: all 0.7s;
+}
+
+
+
+@keyframes newLocation {
+    from{
+        opacity: 0;
+        visibility: hidden;
+        transform: translateY(200px) ;
+    }
+    to{
+        opacity: 1;
+        visibility: visible;
+        transform: translateY(0px) ;
+        transition: all 1s;
+    }
+}
+
+@keyframes newLocationBack {
+    from{
+        opacity: 1;
+        visibility: visible;
+        transform: translateY(0px) ;
+        transition: all 0.5s;
+    }
+    to{
+        transition: all 0.5s;
+        opacity: 0;
+        transform: translateY(200px) ;
+    }
+}

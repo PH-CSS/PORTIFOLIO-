@@ -1,0 +1,338 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>The coce</title>
+<style>
+    *{
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+        
+
+    }
+
+    html,body{
+        
+        overflow-x: hidden;
+        background-color: #ffffff;
+
+    }
+
+    
+
+    .center{
+        display: flex;
+        flex-wrap: wrap;
+        max-width: 11200px;
+        margin: 0 auto;
+        padding: 0 2%;
+    }
+
+    .header{
+        height: 200px;
+        padding: 25px 0;
+    }
+
+    .logo{
+        width: 80%;
+        padding-top: 15px;
+        padding-left: 250px;
+    }
+
+    .menu{
+        display: flex;
+        flex-direction: row;
+        padding-top: 44px;
+        padding-left: 650px;
+        width: 50%;
+        text-align: right;
+        font-size: 20px;
+
+    }
+
+    .menu a{
+        color: rgb(0, 0, 0);
+        text-decoration: none;
+        font-weight: bold;
+        margin-right: 25px;
+    }
+
+
+    .button2 h4{
+    font-size: 18px;
+    font-weight: 600;
+    color: #ffffff;
+    margin-bottom: 10px;
+
+}
+
+.button2 a{
+    display: inline-block;
+    color: #ffffff;
+    background: #db1919;
+    border: 1px solid transparent;
+    padding: 12px 30px;
+    line-height: 1.4;
+    font-size: 14px;
+    font-weight: 500;
+    border-radius:25px;
+    text-transform: uppercase;
+    transition: all .55s ;
+    text-decoration: none;
+
+}
+
+.button2 a:hover{
+    background: white;
+    color: #000000;
+    border: 1.5px solid rgb(0, 0, 0);
+    padding-left: 35px;
+    padding-right: 35px;
+    padding-top: 15px;
+    padding-bottom:15px ;
+    margin-left: -5px;
+    justify-content: center;
+}
+
+.button2{
+    display: block;
+    padding-left: 116px;
+    margin-top: -10px;
+}
+
+
+    
+
+    
+
+
+    nav{
+        position: absolute;
+        top: 600px;
+        left: 15%;
+        height: 600px;
+        width: 400px;
+        background-color: #c9c6c6;
+        font-size: 20px;
+        border-radius: 6%;
+        height: 500px;
+        width: 450px;
+        
+       
+    }
+    
+
+
+
+
+#cabeca{
+    height: 120px;
+    width: 100%;
+    background-color: #ffffff;
+    box-shadow: 2px 2px 12px black;
+   
+}
+
+
+
+.b:hover{
+    display: flex;
+    justify-content: center;
+    transition:  0.5s;
+    font-size: 23px;
+    padding: 5px;
+    border-radius: 5px;
+    
+}
+.c:hover{
+    display: flex;
+    justify-content: center;
+    transition:  0.5s;
+    font-size: 23px;
+    padding: 1px;
+    border-radius: 5px;
+    
+}
+
+.logo:hover{
+    cursor: pointer;
+    transition: 2s;
+    height: 95px;
+    width: 220px;
+}
+
+
+.a{
+    font-size: 23px;
+    padding-right: 16px;
+    margin-top: -2px;
+    color: #ffffff;
+    font-family: Arial, Helvetica, sans-serif;
+    text-decoration: dashed;
+}
+.b{
+    padding-right: 8px;
+    padding-left: 8px;
+}
+.c{
+    padding-left: 8px;
+    
+}
+
+
+.Coca-zero{
+    
+    width: 100%;
+    height: 400px;
+    background-color: #000000;
+    overflow-y: hidden;
+    box-shadow:  0px 10px 100px
+    black ;
+
+
+}
+
+.zero{
+    
+    padding-left: 35%;
+    padding-top: 17px;
+}
+
+.text-deliciosa{
+    display: flex;
+    align-items: center;
+    color: #ffffff;
+    font-family: Arial, Helvetica, sans-serif;
+    padding-left: 40%;
+    font-size: 33px;
+    padding-top: 40px;
+}
+
+
+
+.image{
+    display: flex;
+    
+    padding-left: 70px;
+    margin-top: -600px;
+
+}
+img{
+    border-radius: 3%;
+    
+}
+
+
+.botao-hover{
+    display: block;
+    margin-top: 300px;
+    margin-left: 1100px;
+    width: 120px;
+    height: 50px;
+    background-color: transparent;
+    border-radius: 50px;
+    border: solid 1px #f5f5f5;
+    overflow-y: hidden;
+    overflow-x: hidden;
+}
+
+.baguio{
+    color: rgb(233, 233, 233);
+    padding-left: 36%;
+    padding-top: 5px;
+    font-size: 25px;
+
+}
+
+.textin{
+    margin-top: -50px;
+    margin-left: 1100px;
+    width: 120px;
+    height: 50px;
+    overflow-y: hidden;
+    overflow-x: hidden;
+    opacity: 0;
+}
+ .textin:hover{
+    margin-top: -100px;
+    margin-left: 1000px;
+    cursor: pointer;
+    transition: all 0.2s;
+    width: 400px;
+    height: 400px;
+    opacity: 1;
+    font-size: 25px;
+    color: #000000;
+    overflow-y: hidden;
+    overflow-x: hidden;
+
+ }
+
+
+
+
+        
+
+
+
+
+</style>
+<!--* apenas resetando o basico-->
+<!--center fazendo configuração de tela-->
+<!--logo fazendo na porcentagem para dar um tamanho ficticio e espaçando o texto-->
+<!--menu ajeitando o texto e espacamento-->
+<!--menu a decorando e ajeitando os "links"-->
+</head>
+<body>
+    <div id="cabeca">
+    <header>
+        <div class="center">
+            <a href="projeto_ferias.html"><div class="logo"><img src="coc.png" height="80" width="250"></div></a>
+            <!--Logo do cabeçalho-->
+            <div class="menu">
+                
+                <div class="a"><a href="">About</a></div>
+                <div class="b"><a href="Menu.html">Menu</a></div>
+                <div class="c"><a href="news!.html">News!</a></div>
+                <div class="button2"><h4><a href="form.html">Entrar</a></h4></div>
+            </div><!--menu-->
+        </div><!--center-->
+    </div>
+    </header>
+
+    <div class="Coca-zero"> 
+                <div class="text-deliciosa">
+                    Deliciosa! Refrescante. Prova aí!
+                </div>
+        <div class="zero">
+            <img src="zero.png">
+        </div>
+    </div>
+
+    
+    <nav>
+    <img src="M,coce.png">
+        <div class="button">
+            <p><h4><div class="image"><img src="Coca-ColadeMexico355mLBouteille-productImageSmall.png"  height="700" width="700"></div> </h4></p>
+        </div>       
+    </nav>
+
+    
+
+    <div class="botao-hover">
+        <div class="baguio">. . .</div>
+    </div>
+        <div class="textin">
+            A Coca-Cola foi criada pelo farmacêutico John Pemberton, em maio de 1886, em Atlanta, nos Estados Unidos. Originalmente, a receita deveria servir como um remédio para o estômago,
+             um mal estar comum entre os estadunidenses da época.
+        </div>
+    
+
+
+
+   
+    
+</body>
+</html>

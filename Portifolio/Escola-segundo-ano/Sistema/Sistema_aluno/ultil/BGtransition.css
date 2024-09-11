@@ -1,0 +1,75 @@
+
+
+
+
+ .linhaDeLog{
+  position: relative;
+  height: 70vh;
+  width: 40vw;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+
+.linhaDeLog header{
+  display: grid;  
+  place-content: center;
+  height: max-content;
+  width: 100%;
+  gap: 5px;
+
+}
+.linhaDeLog .progress{
+  width: 100%;
+  height: 80%;
+  display: grid;
+  grid-template-columns: repeat(2, 2fr);
+  
+}
+
+.separacao{
+  position: absolute;
+  display: grid;
+  height: 60%;
+  width: 100%;
+  grid-template-rows: repeat(3,3fr);
+}
+
+.barra{
+  width: 2px;
+  height: 100%;
+  background-color: black;
+  place-self: center;
+}
+
+.left{
+  display: flex;
+  flex-direction: column;
+  align-items: end;
+  justify-content: space-evenly;
+}
+
+.right{
+  height: 80%;
+  display: flex;
+  flex-direction: column;
+  align-items: start;
+  justify-content: space-evenly;
+}
+
+/* organização do espaço que muda */
+
+.sectionChange{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: fit-content;
+  width: fit-content;
+}
+
+.stick{
+  width: 20px;
+  height: 2px;
+  background-color: black;
+}

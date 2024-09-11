@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8"> 
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ex2</title>
+</head>
+
+<body>
+    <script>
+        var mesada = parseFloat(prompt("Digite o valor da mesada:"));
+        var qntFilhos = parseFloat(prompt("Digite o número de filhos que receberão a mesada:"));
+
+        var final =  (mesada % qntFilhos);
+        var qntPorFilho = (mesada - final) / qntFilhos;
+        var filhoMaisVelho = qntPorFilho + (mesada % qntFilhos);
+
+        alert("Cada filho receberá: " + qntPorFilho + " e o filho mais velho receberá: " + filhoMaisVelho);
+    </script>
+</body>
+
+</html>

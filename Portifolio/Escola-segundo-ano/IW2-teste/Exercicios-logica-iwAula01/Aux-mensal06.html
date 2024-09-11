@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ex6</title>
+</head>
+
+<body>
+    <script>
+        const salario = 2000.00;
+        const auxilioCreche = 45.50;
+        const salarioFixo = salario + auxilioCreche
+
+        var vendas = [5784.50, 3418.41, 4124.10, 1874.00, 7000.00, 9450.00];
+        const mes = ["janeiro", "fevereiro", "março", "abril", "maio", "junho"];
+
+        console.log("1- \n O salário fixo mais o auxílio creche é: R$" + salarioFixo.toFixed(2));
+        console.log("2- \n Fulano de Silva receberá de comissão em Janeiro: R$" + (vendas[0] * 0.1));
+        console.log("3- \n Fulano de Silva será descontado em Janeiro em: R$" + ((salario + (vendas[0] * 0.1)) * 0.05).toFixed(2));
+
+        var salarioTotal = 0
+
+        for (var i = 0; i < vendas.length; i++) {
+            console.log(vendas[i])
+            var salarioFinal = (salarioFixo + ((10/100) * vendas[i])) - ( (salario + ((10/100) * vendas[i])) * (5/100))
+
+            console.log("4- \n Fulano de Silva recebeu no mês de " + mes[i] + ": R$" + salarioFinal .toFixed(2) + "\n");
+            
+            salarioTotal += salarioFinal
+        };
+        console.log("5- \n A média salarial dos 6 meses é de: R$" + (salarioTotal / 6).toFixed(2));
+    </script>
+</body>
+
+</html>

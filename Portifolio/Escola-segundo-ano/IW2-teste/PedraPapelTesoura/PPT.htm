@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pedra Papel e Tesoura</title>
+</head>
+
+<style>
+    body{
+        background-color: antiquewhite;
+        display: grid;
+        place-items: center;
+        height: 100vh;
+        overflow: hidden;
+}
+
+.selecao{
+    display: flex;
+    gap: 50px;
+}
+
+.selecao button{
+    padding: 20px;
+    font-size: 2rem;
+}
+
+.escolha{
+    text-align: center;
+    font-size: 100px;
+}
+</style>
+<body>
+    <div class="escolha"></div>
+    <div class="selecao">
+    <button type="button" id="pedra"> 👊</button>
+    <button type="button" id="tesoura"> ✌</button>
+    <button type="button" id="papel"> ✋</button>
+    </div>
+
+
+    <script src="pedra.js" defer></script>
+    
+</body>
+</html>

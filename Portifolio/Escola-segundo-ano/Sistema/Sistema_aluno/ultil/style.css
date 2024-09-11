@@ -1,0 +1,164 @@
+
+*{
+    font-family: "Quicksand", sans-serif;
+    padding: 0;
+    margin: 0;
+    overflow: hidden;
+    box-shadow: none;
+    outline: none;
+}
+
+body{
+    height: 100vh;
+    background-color: rgb(217, 245, 245);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+
+
+
+@keyframes enter {
+    from{
+        gap: 100vw;
+    }
+    to{
+        gap: 0;
+    }
+}
+.logInSection{
+    display: none;
+    justify-content: center;
+    align-self: center;
+    flex-direction: row;
+    gap: 100vw;
+}
+
+
+form{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    gap: 3rem;
+}
+
+.inputSection{
+    background-color: rgb(73, 109, 97)    ;
+    height: 100vh;
+    width: 50vw;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    gap: 3rem;
+    color: white;
+}
+
+.bgGround{
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    width: 50vw;
+    }
+@media only screen and (max-width:1225px) {
+
+    .bgGround{
+        display: none;
+    }
+    /* lembrete @media vem depois o css carrega de cima para baixo*/
+    .inputSection{
+        width: 100vw;
+    }
+}
+.inputSection section{
+    align-self: center;
+    height: fit-content;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    gap: 1rem;
+}
+
+.inputSection section h1{
+    font-size: 5rem;
+}
+
+.inputSection section h2{
+    width: fit-content;
+    font-size: 1.5rem;
+    font-weight: 600;
+}
+
+.inputArea{
+    height: fit-content;
+    width:  80%;
+    display: grid;
+    place-content: center;
+    grid-template-columns: repeat(1, 1fr);
+    /* maximo 1225px */
+    flex-wrap: wrap;
+    gap: 5px;
+}
+
+@media only screen and (max-width:650px) {
+    .inputArea{
+        grid-template-columns: repeat(1, 1fr);
+    }
+}
+
+input{
+    width: 200px;
+    height: 1.5rem;
+    padding: 10px;
+    border-radius: 25px;
+    margin: 10px;
+    border: 10px;
+    place-self: center;
+}
+
+input:disabled{
+    background-color: white;
+    text-align: center;
+    margin: 0;
+    align-items: end;
+}
+
+header .loged{
+    margin: 10px;
+  }
+
+.sameArea {
+    display: flex;
+    width: 100%;
+}
+
+.sameArea input{
+    width: 50%;
+}
+
+ .cad{
+    color: white;
+    border: 2px solid white;
+    font-weight: 700;
+    width: 250px;
+    padding: 15px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 30px;
+    background-color: transparent;
+    cursor: pointer;
+    outline:none;
+    transition: all 0.25s ease;
+}
+
+.cad:hover{
+    color: rgb(73, 109, 97);
+    background-color: white;
+}
+

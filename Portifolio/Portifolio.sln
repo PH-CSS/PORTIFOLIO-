@@ -1,0 +1,33 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.5.002.0
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "treinosDeElementos", "treinosDeElementos", "{1254F7D1-B6A5-4DAB-9C4F-3701B5EB0890}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "newLanguage", "newLanguage", "{05F964E0-0C51-451E-B312-D3449A7289F5}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Portifolio", "treinosDeElementos\newLanguage\DOTNET\Portifolio.csproj", "{B9D60354-BEC8-4A99-9C4A-5F70D2F0F2C3}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{B9D60354-BEC8-4A99-9C4A-5F70D2F0F2C3}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{B9D60354-BEC8-4A99-9C4A-5F70D2F0F2C3}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{B9D60354-BEC8-4A99-9C4A-5F70D2F0F2C3}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{B9D60354-BEC8-4A99-9C4A-5F70D2F0F2C3}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{05F964E0-0C51-451E-B312-D3449A7289F5} = {1254F7D1-B6A5-4DAB-9C4F-3701B5EB0890}
+		{B9D60354-BEC8-4A99-9C4A-5F70D2F0F2C3} = {05F964E0-0C51-451E-B312-D3449A7289F5}
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {C02DDFE9-AD7D-4FBB-9DA0-06041F3D118F}
+	EndGlobalSection
+EndGlobal

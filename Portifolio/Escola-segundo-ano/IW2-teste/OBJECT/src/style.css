@@ -1,0 +1,62 @@
+body{
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 100px;
+    background-color: rgb(138, 19, 19);
+}
+
+th, td{
+    text-align: center;
+    padding: 10px;
+    margin: 5px;
+    border-bottom: 1px groove black;
+    color: rgb(230, 230, 230);
+}
+
+th{
+    background-color:rgba(165, 42, 42, 0.504) ;
+    border-bottom: none;
+    border-radius: 10px;
+}
+
+
+    table{
+        background-color: rgb(100, 100, 100);
+        border-radius: 20px;
+        padding: 10px;
+        border-spacing: 15px;
+
+    }
+
+.pessoa {
+    height: fit-content;
+    width: 220px;
+    padding: 25px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+    background-color: rgb(193, 184, 172);
+    font-weight: 600;
+    border-radius: 30px;
+}
+
+.pessoa img{
+    border-radius: 30px;
+    width: 200px;
+    margin-bottom: 10px;
+    
+}
+
+tr{
+    border: 1px solid black;
+    padding: 10px;
+    border-radius: 10px;
+}
+tr:hover td{
+    background-color: rgba(165, 42, 42, 0.504);
+    border-radius: 10px; 
+    border-bottom: none;
+}

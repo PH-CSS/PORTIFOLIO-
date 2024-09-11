@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html  lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://cdn.jsdelivr.net/npm/js-cookie@3.0.5/dist/js.cookie.min.js" defer></script>
+
+    <title>cookies</title>
+    <style>
+        *{
+            padding: 0;
+            margin: 0;
+            
+        }
+
+        @keyframes animacaofd {
+            from{
+                visibility: hidden;
+                opacity: 0;
+            }
+            to{
+                visibility: hidden;
+                opacity: 1;
+            }
+        }
+    </style>
+</head>
+<body style="display: grid; place-content: center; height: 100vh;">
+    <script src="./js/cookies.js" defer></script>
+
+    <form action="">
+        <div class="submitHow" style="display: flex;  transition: all 0.3s; visibility: hidden; justify-content: center; align-items: center; flex-direction: column; gap: 25px;">
+
+            <h1 style="font-weight: 100; font-family: Arial, Helvetica, sans-serif;"></h1>
+            <input class="NomeInp" style="padding: 10px; border-radius: 25px; outline: none; border: 1px solid black;" type="text" placeholder="Seu nome" required>
+            <select name="modo" value="modo" id="modo" style="padding: 10px; width: fit-content; border-radius: 25px; background-color: black; color: white; outline: none; border: none;">
+                <option value="diurno">diurno</option>
+                <option value="noturno">noturno</option>
+            </select>
+
+        </div>
+
+    </form>
+    <footer style="position: absolute; margin-bottom: 25px; align-self:end; justify-self: center; border-radius: 25px; display: flex; justify-content: space-around; align-items: center; width: 80%; height: fit-content; border: 1px solid black; padding: 20px;">
+        <div class="imgCookie">
+            <img style="width: 50px; aspect-ratio: 1/1;" src="cookies.png" alt="">
+        </div>
+
+        <button class="getCookies" type="submit" style=" cursor: pointer;padding: 20px; border-radius: 25px; background-color: black; color: white; outline: none; border: none;" >Pegar cookies</button>
+    </footer>
+</body>
+</html>

@@ -1,0 +1,296 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>cadastre-se</title>
+    <style>
+         html,body{
+        height: 100%;
+        overflow-y: hidden;
+        overflow-x: hidden;
+        background-color: rgb(255, 255, 255);
+        font-family: Arial, Helvetica, sans-serif;
+
+    }
+
+    nav {
+        padding:5%;
+        width: 350px;
+        height: 500px;
+        position: absolute;
+        top:10%; left:15%;
+        box-shadow: #000000 0.5rem;
+        border-radius: 5%;
+    }
+
+    .input-box input{
+            margin: 0.6rem 0;
+            padding: 0.8rem 1.2rem ;
+            border: 1px solid black;
+            border-radius: 10px;
+            box-shadow: 7px 7px 16px #0000001c;
+            color: #000000;
+            
+        }
+
+        .input-box input:hover{
+            cursor: pointer;
+            border: 1px solid red;
+            transition: 0.3s;
+        }
+
+        input{
+            
+            width: 90%;
+    display: block;
+    color: #000000;
+    border: 2px solid #000000;
+    border-radius: 10px;
+    font-size: 16px;
+    padding: 14.6px 10px;
+    transition: var(--default-transition);
+    outline: 2px solid transparent;
+    appearance: none;
+    background-color: var(--white);
+    
+        }
+        
+
+
+        .input-box{
+            margin-left: -10px;
+            
+            
+        }
+
+
+        .spaco{
+            padding-top: 50px;
+        }
+
+        input::placeholder{
+            color:#000000;
+        }
+
+        .button2 h4{
+    font-size: 18px;
+    font-weight: 600;
+    color: #ffffff;
+    margin-bottom: 10px;
+
+}
+
+.button2 a{
+    display: inline-block;
+    color: #ffffff;
+    background: #db1919;
+    border: 1px solid transparent;
+    padding: 12px 30px;
+    line-height: 1.4;
+    font-size: 14px;
+    font-weight: 500;
+    border-radius:25px;
+    text-transform: uppercase;
+    transition: all .55s ;
+    text-decoration: none;
+
+}
+
+.button2 a:hover{
+    background: white;
+    color: hsl(0, 0%, 0%);
+    border: 1.5px solid rgb(0, 0, 0);    
+    justify-content: center;
+    
+}
+
+.button2{
+    padding-left: 27%;
+    margin-top: 60px;
+
+}
+
+.button2 h4{
+    font-size: 18px;
+    font-weight: 600;
+    color: #ffffff;
+    margin-bottom: 10px;
+
+}
+
+.button2 a{
+    display: inline-block;
+    color: #ffffff;
+    background: #db1919;
+    border: 1px solid transparent;
+    padding: 12px 30px;
+    line-height: 1.4;
+    font-size: 14px;
+    font-weight: 500;
+    border-radius:25px;
+    text-transform: uppercase;
+    transition: all .55s ;
+    text-decoration: none;
+
+}
+
+.button2 a:hover{
+    background: white;
+    color: hsl(0, 0%, 0%);
+    border: 1.5px solid rgb(0, 0, 0);    
+    justify-content: center;
+    
+}
+
+.button2{
+    padding-left: 30%;
+    margin-top: 60px;
+
+}    .button3 h4{
+    font-size: 18px;
+    font-weight: 600;
+    color: #ffffff;
+    margin-bottom: 10px;
+
+}
+
+.button3 a{
+    display: inline-block;
+    color: #000000;
+    background: #ffffff;
+    border: 1.5px solid black;
+    padding: 12px 30px;
+    line-height: 1.4;
+    font-size: 14px;
+    font-weight: 500;
+    border-radius:25px;
+    text-transform: uppercase;
+    transition: all .55s ;
+    text-decoration: none;
+
+}
+
+.button3 a:hover{
+    background: #db1919;
+    color: hsl(0, 0%, 100%);
+    border: 1.5px solid transparent; 
+    justify-content: center;
+    
+}
+
+.button3{
+    padding-left: 20%;
+    margin-top: 10px;
+
+}
+
+strong{
+    font-size: 35px;
+    
+}
+
+h5{
+    font-size: medium;
+    padding-left: 94px;
+    
+}
+
+
+
+h1{
+    padding-left: 55%;
+    margin-top: -30%;
+    font-size: 32px;
+}
+
+.borda{
+    margin-left: 47%;
+    margin-top: 5%;
+    width: 1px;
+    height: 65%;
+    background-color: #000000;
+    
+
+}
+p{
+    margin-left: 59%;
+    font-size: 25px;
+}
+
+img{
+    position: absolute;
+    width: 20%;
+    height: 20%;
+    margin-left: 62%;
+    margin-top: 2%;
+}
+
+img:hover{
+    transition: all 0.5s;
+    width: 20.5%;
+    height: 20.5%;
+   
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    </style>
+</head>
+<body>
+  
+<nav>
+
+    <strong> Entrar com o E-mail.</strong>
+    <div class="input-box">
+        <div class="spaco">
+            <label for="email">E-mail</label></div>
+        <input id="email" type="email" name="email" placeholder="Digite seu email" required>
+    </div>
+    <div class="input-box">
+            <label for="password">Senha</label>
+        <input id="password" type="password" name="password" placeholder="Digite sua senha" required>
+    </div>
+
+    <div class="button2"><h4><a href="form.html">Entrar</a></h4></div>
+
+    <h5> Não possui conta ?</h5>
+
+
+    <div class="button3"><h4><a href="form.html">Fazer cadastro</a></h4></div>
+
+</nav>
+
+<div class="borda">
+
+</div>
+
+<h1> Cadastre-se para ter uma experiencia unica!</h1>
+<p> Com descontos e a sua propria exclusividade!</p>
+
+ 
+    <a href="projeto_ferias.html"> <img src="Coca-Cola-Emblema.png"></a>
+ 
+
+
+
+
+
+
+
+    
+</body>
+</html>

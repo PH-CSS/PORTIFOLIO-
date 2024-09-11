@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+
+    <style>
+        body {
+            height: 100vh;
+            width: 100vw;
+            display: grid;
+            place-items: center;
+        }
+    </style>
+
+    <script defer>
+
+let txtOn = false;
+
+        function TrocarImg(id, caminho, tamanho, mensagem) {
+
+
+            let troca = document.querySelector(id);
+
+            troca.src = caminho;
+
+            troca.width = tamanho;
+
+            
+            // tirar e colocar texto
+
+            
+
+            if (txtOn === false) {
+
+            let txt = document.createElement('h1');
+            txt.textContent = mensagem;
+
+            let container = document.querySelector('body');
+            container.appendChild(txt);
+
+                txtOn = true;
+            } 
+        }
+        
+
+
+
+    </script>
+    <!-- fim do script -->
+
+    <img src="5a2daa0b8d4fa1.9109181415129420915788.png" alt="nuvem" id="nunu" width="200"
+        onmouseenter="TrocarImg('#nunu', 'pngegg.png', 400, 'Sons de trovão')"
+        onmouseleave="TrocarImg('#nunu', '5a2daa0b8d4fa1.9109181415129420915788.png', 200, '...')">
+
+</body>
+
+</html>

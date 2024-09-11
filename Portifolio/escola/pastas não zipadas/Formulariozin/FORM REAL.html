@@ -1,0 +1,325 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Formulário de cadastro</title>
+<style type="text/css">
+        *{
+            padding: 0;
+            margin: 0;
+            box-sizing: border-box;
+            font-family: 'Inter', sans-serif;
+        }
+
+        body{
+            width: 100%;
+            height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            background: #0c0ce94d;
+        }
+
+        .container{
+            width: 60%;
+            height: 80vh;
+            display: flex;
+            box-shadow: 5px 5px 10px rgba(0, 0, 0, .212);
+        }
+
+        .form-image{
+            width: 60%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            background-color: #fff;
+            padding: 1rem;
+        }
+
+        .form-image img{
+            width: 38rem;
+        }
+        .form{
+            width: 50%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-direction: column;
+            background-color: #fff;
+            padding: 3rem;
+        }
+
+        .form-header{
+            margin-bottom: 5rem;
+            display: flex;
+            justify-content: space-between;
+        }
+
+        .login-button{
+            display: flex;
+            align-items: center;
+        }
+
+        .login-button button{
+            border: none;
+            background-color: #6c63ff;
+            padding: 0.4rem 1rem;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+
+        .login-button button:hover{
+            background-color:#6b63fff1 ;
+        }
+
+        .login-button button a{
+            text-decoration: none;
+            font-weight: 500;
+            color: #fff;
+        }
+
+        .form-header h1::after{
+            content: '';
+            display: block;
+            width: 5rem;
+            height: 0.3rem;
+            background-color: #6c63ff;
+            margin: 0 auto;
+            position: absolute;
+            border-radius: 10px;
+        }
+        .input-group{
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-around;
+            padding: 1rem 0;
+        }
+        .input-box{
+            display: flex;
+            flex-direction: column;
+            margin-bottom: 1.1rem;
+        }
+
+        .input-box input{
+            margin: 0.6rem 0;
+            padding: 0.8rem 1.2rem;
+            border: none;
+            border-radius: 10px;
+            box-shadow: 7px 7px 16px #0000001c;
+        }
+
+        .input-box input:hover{
+            background-color: #eeeeee75;
+        }
+
+        .input-box input:focus-visible{
+            outline: 1px solid #6c63ff;
+        }
+
+        .input-box label,
+        .gender-title h6{
+            font-size: 0.75rem;
+            font-weight: 600;
+            color: #000000c0;
+        }
+
+        .input-box input::placeholder{
+            color: #000000c0;
+        }
+
+        .input-box input::placeholder{
+            color: #000000be;
+        }
+
+        .estade-title{
+            margin-bottom: 1rem;
+            display: flex;
+            justify-content: center;
+
+        }
+
+
+        .gender-title{
+            margin-bottom: 1rem;
+            display: flex;
+            
+            justify-content: center;
+        }
+
+        .gender-input{
+            display: flex;
+            align-items: center;
+        }
+
+        .gender-input input{
+            margin-right: 0.35rem;
+        }
+
+        .gender-input label{
+            font-size: 0.81rem;
+            font-weight: 600;
+            color:#000000c0;
+        }
+
+        .continue-button button{            
+            width: 80%;
+            margin-top: 2.5rem;
+            margin-left: 3rem;
+            margin-right: 1.5rem;
+            border: none;
+            background-color: #6c63ff;
+            padding: 0.62rem;
+            border-radius: 5px;
+            cursor: pointer;          
+        }
+
+        
+
+        .continue-button button:hover{
+            background-color: #6b63fff1;
+        }
+
+        .continue-button button a {
+            text-decoration: none;
+            font-size: 0.93rem;
+            font-weight: 500;
+            color: #fff;
+        }
+
+
+        .gender-group{
+            display: flex;
+            justify-content: space-evenly;
+            margin-top: 0.63rem;
+            padding: 0 0.5rem;
+        }
+
+        .textarea{
+            margin: 0.6rem 0;
+            padding: 0.8rem 1.2rem;
+            border: none;
+            border-radius: 10px;
+            box-shadow: 10px 10px 19px #7013da59;
+ 
+        }
+
+
+
+
+
+
+
+</style>
+
+
+
+
+</head>
+
+<body>
+
+<div class="container">
+        <div class="form-image">
+            <img src="../Formulariozin/img/undraw_Sign_up_n6im.png" width="600">
+        </div>
+
+        <div class="form">
+            <form action="#">
+                <div class="form-header">
+                    <div class="title">
+                        <h1>Cadastre-se</h1>
+                    </div>
+                    <div class="login-button">
+                        <button><a href="#">Entrar</a></button>
+                    </div>
+                </div>
+
+    <div class="input-group">
+                    <div class="input-box">
+                        <label for="firstname">Primeiro nome</label>
+                        <input id="firstname" type="text" name="firstname" placeholder="Digite seu peimeiro nome" required>
+                    </div>
+
+            <div class="input-box">
+                <label for="lastName">Sobrenome</label>
+                <input id="lastName" type="text" name="lastName" placeholder="Digite seu Sobrenome" required>
+            </div>
+
+    <div class="input-box">
+        <label for="email">E-mail</label>
+        <input id="email" type="email" name="email" placeholder="Digite seu email" required>
+    </div>
+
+        <div class="input-box">
+            <label for="number">Celular</label>
+            <input id="number" type="tel" name="number" placeholder="(xx) xxxx-xxxx" required>
+        </div>
+
+            <div class="input-box">
+                <label for="password">Senha</label>
+                <input id="password" type="password" name="password" placeholder="Digite sua senha" required>
+            </div>
+
+                <div class="input-box">
+                    <label for="Confirmpassword">Confirme sua senha</label>
+                    <input id="Confirmpassword" type="password" name="Confirmpassword" placeholder="Digite sua senha" required>
+                </div> 
+                
+
+
+                    <div class="input-box">
+                        <div class="textarea">
+                    <h6>Avaliação ao Dev.</h6>
+                <textarea rows="7" cols="30"> </textarea>
+                        </div>
+                    </div>
+                
+        
+    </div>
+
+        <div class="gender-inputs">
+            <div class="gender-title">
+                <h6>Gênero</h6>
+            </div>
+        </div>
+
+            <div class="gender-group">
+                <div class="gender-inputs">
+                    <input type="radio" id="female" name="gender">
+                    <label for="female">Feminino</label>
+                </div>
+
+        <div class="gender-inputs">
+            <input type="radio" id="male" name="gender">
+            <label for="male">Masculino</label>
+        </div>
+
+    <div class="gender-inputs">
+        <input type="radio" id="others" name="gender">
+        <label for="others">Outros</label>
+    </div>
+                
+            </div>
+
+
+
+                
+                    <div class="continue-button">
+                        <button><a href="#">Continuar</a></button>
+                    </div>
+               
+
+
+                
+
+
+
+
+        </form>              
+    </div>
+</div>
+</body>
+
+</html>

@@ -1,0 +1,335 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+
+        BODY{
+
+            overflow-y: hidden;
+            overflow-x: hidden;
+            background: url(Group_6.jpg);
+            
+        }
+
+
+
+        .container{
+            width: 100vw;
+            height: 100vh;
+            display: flex;
+            display: grid;   
+            background-color: rgba(61, 61, 61, 0.212);
+            
+            
+
+        }
+
+        .form-image{
+            
+            
+           
+        }
+
+
+
+        .form{
+            
+            
+            display: flex;
+            align-items: center;
+            flex-direction: column;
+            background-color: #3a3737;
+            background-color: none;
+            overflow-y: scroll;
+
+            font-family: Arial, Helvetica, sans-serif;
+            font-size: 20px;
+            margin: -10px;
+            background: url(Group_6.jpg);
+            background-repeat: no-repeat;
+            
+        }
+
+
+        .volt{
+            position: fixed;
+            left: 0;
+            margin-top: 6vh;
+            margin-left: 10vw;
+            
+        }
+
+        .card{
+            border: solid black 1px;    
+            margin-top: 7vh;
+            padding: 16px;
+            background-color: white;
+            border-radius: 20px;
+            margin-left: 1.5vw;
+            
+            
+        }
+        .card-title{
+            
+            font-size: 45px;
+            margin: -9px;
+        }
+
+        .continue-button{
+            text-decoration: none;
+        }
+
+
+        .continue-button button{            
+            width: 80%;
+
+            border: none;
+            background-color: black;
+            padding: 0.62rem;
+            border-radius: 5px;
+            margin-left: 1vw;
+            cursor: pointer;   
+            color: rgb(255, 255, 255);
+            
+              
+        }
+
+        
+
+        .continue-button button:hover{
+            background-color: #d8cc27;
+            color:black;
+            transition: 0.5s;
+
+        }
+
+
+        .cont2{
+            background-color: rgb(255, 255, 255);
+            border-radius: 25px;
+            box-shadow: black;
+            margin-top: 5vh;
+            padding: 10.3%;
+        }
+
+
+        .cont2 h2{
+            margin-top: -2.5vh;
+            margin-left: 2vw;
+        }
+
+        .input-boxP input{
+            border-radius: 15px;
+           width: 5vw;
+            font-size: 30px;
+            padding: 2%;
+
+        }
+
+        .input-boxP input::placeholder{
+            font-size: 40px;
+            font-family: Arial, Helvetica, sans-serif;
+            padding: 1%;
+        }
+
+        .input-boxP {
+            font-size: 25px;
+        }
+
+
+        .input-box{
+            display: flex;
+            flex-direction: column;
+            margin-bottom: 1.1rem;
+            
+        }
+
+        .input-box input{
+            margin: 0.6rem 0;
+            padding: 2vh 2vw;
+            border: none;
+            border-radius: 10px;
+            box-shadow: 7px 7px 16px #0000001c;
+        }
+
+        .input-box input:hover{
+            background-color: #eeeeee75;
+        }
+
+        .input-box input:focus-visible{
+            outline: 1px solid #ff7b00;
+        }
+
+        .input-box label,
+        .gender-title h6{
+            font-size: 0.75rem;
+            font-weight: 600;
+            color: #000000c0;
+        }
+
+        .input-box input::placeholder{
+            color: #000000c0;
+        }
+
+        .input-box input::placeholder{
+            color: #000000be;
+        }
+
+
+        .cont3{
+        margin-top: -5vh;
+            background-color: white;
+            border-radius: 25px;
+            box-shadow: black;
+            margin-top: 5vh;
+            padding: 4.3%;
+        }
+
+
+        .cont3 h2{
+            margin-top: -3.5vh;
+            margin-left: 4vw;
+        }
+
+
+        .cont3 .continue-button button{
+            margin-left: 3vw;
+           
+        }
+
+
+        #c{
+            box-shadow: none;
+            margin-left: -19vw;
+            
+        }
+
+        .volt a{
+            text-decoration: none;
+            color: black;
+        }
+
+
+
+
+
+
+            
+
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="form-image">
+           
+        
+        </div>
+        <div class="form">
+            
+            <div class="volt">
+                <a href="cadastro_doador.html">voltar</a>
+            </div>
+            <div class="cont2">
+            <h1>Opções de doações</h1></br>
+            <h2>Mensais ou unicas</h2>
+    <div class="inputs">
+
+            <div class="card" style="width: 18rem;">
+                <div class="card-body">
+                  <h5 class="card-title">R$99</h5>
+                  <p class="card-text">Pacote mensal ou unico.</p>
+                  <div class="continue-button">
+                    <button><div class="continue-button"<a href="#">Continuar</a></button></div>
+                </div>
+                </div>
+<!--2-->
+                <div class="card" style="width: 18rem;">
+                    <div class="card-body">
+                      <h5 class="card-title">R$50</h5>
+                      <p class="card-text">Pacote mensal ou unico.</p>
+                      <div class="continue-button">
+                        <button><div class="continue-button"<a href="#">Continuar</a></button></div>
+                    </div>
+                    </div>
+<!--3 -->
+<div class="card" style="width: 18rem;">
+    <div class="card-body">
+      <h5 class="card-title">
+
+        <div class="input-boxP">
+           
+            <input id="preco" type="number" name="pres" placeholder="R$" required>
+        </div>
+
+      </h5>
+      <p class="card-text">Faça o <strong>seu</strong> valor</p>
+      <div class="continue-button">
+        <button><div class="continue-button"<a href="#">Continuar</a></button></div>
+    </div>
+    </div>
+
+
+
+    </div>
+
+
+</div>
+
+
+
+<div class="cont3">
+
+
+
+    <h1>Informações de pagamento</h1></br>
+    <h2>Cartão de credito/debito.</h2>
+    <div class="input-box">
+        <label for="firstname"></label>
+        <input id="firstname" type="text" name="firstname" placeholder="Nome que consta no cartão" required>
+    </div>
+
+<div class="input-box">
+<label for="lastName"></label>
+<input id="lastName" type="text" name="lastName" placeholder="CPF/CNPJ" required>
+</div>
+
+<div class="input-box">
+    <label for="pass"></label>
+    <input id="pass" type="number" name="pass" placeholder="Numero do cartão" required>
+    </div>
+
+
+    <div class="input-box">
+        <label for="pass">Validade do cartão</label>
+        <input id="dat" type="date" name="dat" placeholder="Validade do cartão" required>
+        </div>
+
+        <div class="input-box" style="padding: -10vw;">
+            <label for="c">Desejaria manter a cobrança ?</label>
+            <input id="c" type="checkbox" name="c" placeholder="Estou ciente disso" required>
+        </div>
+
+        <div class="continue-button" >
+            <button><div class="continue-button"<a href="#">Continuar</a></button></div>
+
+
+</div>
+
+
+
+
+
+
+
+
+
+
+
+    </div>
+        </div>
+    </div>
+</body>
+</html>
