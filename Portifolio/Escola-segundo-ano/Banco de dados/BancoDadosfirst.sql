@@ -1,7 +1,7 @@
-create database if not exists PH84;
-use PH84;
+create database if not exists PH88;
+use PH88;
 
-CREATE TABLE dep01 (
+CREATE TABLE if not exists dep01 (
   codigo int NOT NULL auto_increment ,
   nomeFuncionario varchar(255) not null,
   funcoes varchar(255) default NULL,
@@ -111,16 +111,16 @@ VALUES
 --  WHERE (funcoes = "Programador" or funcoes = "Analista")
 --  and salarios >= 1700;
  
--- UPDATE dep01 set Filhos = 1 
--- WHERE codigo <= 4 ;
--- UPDATE dep01 set Filhos = 3 
--- WHERE codigo >= 5 and codigo <= 9 ;
--- UPDATE dep01 set Filhos = 2 
--- WHERE codigo >= 10 and codigo < 15 ;
--- UPDATE dep01 set Filhos = 0 
--- WHERE codigo >= 15 ;
--- UPDATE dep01 set Filhos = 4 
--- WHERE codigo >= 25 ;
+ UPDATE dep01 set Filhos = 1 
+ WHERE codigo <= 4 ;
+ UPDATE dep01 set Filhos = 3 
+ WHERE codigo >= 5 and codigo <= 9 ;
+ UPDATE dep01 set Filhos = 2 
+ WHERE codigo >= 10 and codigo < 15 ;
+ UPDATE dep01 set Filhos = 0 
+ WHERE codigo >= 15 ;
+ UPDATE dep01 set Filhos = 4 
+ WHERE codigo >= 25 ;
 
 -- SELECT * 
 -- from dep01 
@@ -361,10 +361,10 @@ FROM dep01
 where departamento = 5
 GROUP BY funcoes;
 
- SELECT nomeFuncionario, Filhos
+ SELECT count(Filhos), nomeFuncionario
 FROM dep01
-where Filhos > 1
-GROUP BY nomeFuncionario;	
+where Filhos >= 1
+GROUP BY nomeFuncionario;
 
  SELECT  count(*), Filhos
 FROM dep01
@@ -397,7 +397,7 @@ from dep01
 where nomeFuncionario like "%Silva%"
 group by departamento;	
 
-CREATE TABLE cliente (
+CREATE TABLE if not exists cliente (
 	COD char(3) not null primary key,
     NOM char(40) not null,
     Endereço char(50) not null,
@@ -420,7 +420,7 @@ values
 
 select * from cliente;
 
-CREATE TABLE vendas (
+CREATE TABLE if not exists vendas (
 	duplic char(6) not null primary key,
     valor decimal(10,2) not null,
     vencimento date not null,
@@ -429,25 +429,27 @@ CREATE TABLE vendas (
     
 insert into `vendas` 
 values 
-(23012, 945.20, 2020-15-07, 002),
-(23013, 1123.75, 2021-22-08, 001),
-(23014, 1300.60, 2022-09-09, 003),
-(23015, 980.50, 2023-14-10, 004),
-(23016, 1678.90, 2024-30-11, 005),
-(23017, 1245.30, 2025-05-12, 001),
-(23018, 1350.25, 2026-12-01, 004),
-(23019, 1012.40, 2027-18-02, 007),
-(23020, 1598.70, 2028-23-03, 009),
-(23021, 1678.90, 2024-30-11, 004),
-(23022, 1245.30, 2025-05-12, 008),
-(23023, 1350.25, 2026-12-01, 006),
-(23024, 1012.40, 2027-18-02, 007),
-(23025, 1598.70, 2028-23-03, 002),
-(23026, 1175.85, 2029-28-04, 003);
+('23012', 945.20, '2020-01-07', 002),
+('23013', 1123.75, '2021-02-08', 001),
+('23014', 1300.60, '2022-05-09', 003),
+('23015', 980.50, '2023-01-10', 004),
+('23016', 1678.90, '2024-03-11', 005),
+('23017', 1245.30, '2025-09-12', 001),
+('23018', 1350.25, '2026-01-01', 004),
+('23019', 1012.40, '2027-01-02', 007),
+('23020', 1598.70, '2028-02-03', 009),
+('23021', 1678.90, '2024-03-11', 004),
+('23022', 1245.30, '2025-10-12', 008),
+('23023', 1350.25, '2026-01-01', 006),
+('23024', 1012.40, '2027-01-02', 007),
+('23025', 1598.70, '2028-02-03', 002),
+('23026', 1175.85, '2029-02-04', 003);
+
+select * from vendas;
 
 select cliente.NOM, vendas.duplic from cliente, vendas
 where cliente.COD = vendas.COD;
 
 select vendas.* from vendas, cliente
 where cliente.COD = vendas.COD and cliente.NOM = "Micro informatica S.A"
-order by cliente.NOM;
+order by cliente.NOM;""
