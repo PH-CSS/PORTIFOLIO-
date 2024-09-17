@@ -1,5 +1,5 @@
-create database if not exists PH88;
-use PH88;
+create database if not exists PH90;
+use PH90;
 
 CREATE TABLE if not exists dep01 (
   codigo int NOT NULL auto_increment ,
@@ -429,27 +429,59 @@ CREATE TABLE if not exists vendas (
     
 insert into `vendas` 
 values 
-('23012', 945.20, '2020-01-07', 002),
-('23013', 1123.75, '2021-02-08', 001),
-('23014', 1300.60, '2022-05-09', 003),
-('23015', 980.50, '2023-01-10', 004),
+('23012', 945.20, '2000-01-07', 002),
+('23013', 1123.75, '2001-02-08', 001),
+('23014', 1300.60, '2002-05-09', 003),
+('23015', 980.50, '2003-04-10', 004),
 ('23016', 1678.90, '2024-03-11', 005),
 ('23017', 1245.30, '2025-09-12', 001),
-('23018', 1350.25, '2026-01-01', 004),
+('23018', 1350.25, '2006-01-01', 004),
 ('23019', 1012.40, '2027-01-02', 007),
 ('23020', 1598.70, '2028-02-03', 009),
 ('23021', 1678.90, '2024-03-11', 004),
 ('23022', 1245.30, '2025-10-12', 008),
-('23023', 1350.25, '2026-01-01', 006),
+('23023', 1350.25, '2026-04-01', 006),
 ('23024', 1012.40, '2027-01-02', 007),
 ('23025', 1598.70, '2028-02-03', 002),
-('23026', 1175.85, '2029-02-04', 003);
+('23026', 1175.85, '2029-04-04', 003);
 
 select * from vendas;
 
+ -- 4)
 select cliente.NOM, vendas.duplic from cliente, vendas
 where cliente.COD = vendas.COD;
 
+ -- 5)
 select vendas.* from vendas, cliente
 where cliente.COD = vendas.COD and cliente.NOM = "Micro informatica S.A"
-order by cliente.NOM;""
+order by cliente.NOM;
+
+ -- 6)
+select cliente.NOM from cliente, vendas
+where cliente.COD = vendas.COD and month(vendas.vencimento) = 4;
+
+ -- 7)
+ select cliente.NOM, count(vendas.duplic) from cliente, vendas
+where cliente.COD = vendas.COD
+group by cliente.NOM;
+
+ -- 8)
+select cliente.NOM, count(vendas.duplic), vendas.vencimento from cliente, vendas
+where cliente.COD = vendas.COD
+group by cliente.NOM, vendas.vencimento;
+
+ -- 9)
+select  count(vendas.duplic), year(vendas.vencimento), vendas.vencimento from cliente, vendas
+where cliente.COD = vendas.COD
+group by cliente.NOM, year(vendas.vencimento), vendas.vencimento;
+
+ -- 10)
+select   monthname(vendas.vencimento), year(vendas.vencimento), count(vendas.duplic) from cliente, vendas
+where cliente.COD = vendas.COD
+group by cliente.NOM, monthname(vendas.vencimento), year(vendas.vencimento);
+
+ -- 11)
+select cliente.NOM, vendas.valor, vendas.vencimento from cliente, vendas
+where cliente.COD = vendas.COD
+AND vendas.vencimento >= '2000-01-01' 
+and vendas.vencimento <= '2003-12-31';
