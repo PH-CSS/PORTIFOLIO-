@@ -1,5 +1,5 @@
-create database if not exists PH90;
-use PH90;
+create database if not exists PH103;
+use PH103;
 
 CREATE TABLE if not exists dep01 (
   codigo int NOT NULL auto_increment ,
@@ -408,14 +408,14 @@ CREATE TABLE if not exists cliente (
 
 insert into `cliente` 
 values 
-(001, 'Mecânica Rio de Janeiro', 'Rua Amazonas, 321', 'Centro', 'RJ', '12345-678'),
-(002, 'Mecânica Belo Horizonte', 'Avenida Brasil, 456', 'Funcionários', 'MG', '23456-789'),
-(003, 'Mecânica Porto Alegre', 'Rua das Flores, 789', 'Moinhos de Vento', 'RS', '34567-890'),
+(001, 'Mecânica Rio de Janeiro', 'Rua Amazonas, 321', 'Osasco', 'SP', '12345-678'),
+(002, 'Mecânica Belo Horizonte', 'Avenida Brasil, 456', 'Santo Amaro', 'SP', '23456-789'),
+(003, 'Mecânica Porto Alegre', 'Rua das Flores, 789', 'Osasco', 'SP', '34567-890'),
 (004, 'Micro informatica S.A', 'Rua XV de Novembro, 101', 'Centro', 'PR', '45678-901'),
 (005, 'Mecânica Fortaleza', 'Avenida Beira-Mar, 202', 'Aldeota', 'CE', '56789-012'),
 (006, 'Mecânica Recife', 'Rua do Príncipe, 303', 'Boa Vista', 'PE', '67890-123'),
 (007, 'Mecânica Salvador', 'Rua dos Mares, 404', 'Barra', 'BA', '78901-234'),
-(008, 'Mecânica Campinas', 'Rua das Palmeiras, 505', 'Cambuí', 'SP', '89012-345'),
+(008, 'Mecânica Campinas', 'Rua das Palmeiras, 505', 'Santos', 'SP', '89012-345'),
 (009, 'Mecânica Brasília', 'Avenida das Nações, 606', 'Asa Sul', 'DF', '90123-456');
 
 select * from cliente;
@@ -432,18 +432,18 @@ values
 ('23012', 945.20, '2000-01-07', 002),
 ('23013', 1123.75, '2001-02-08', 001),
 ('23014', 1300.60, '2002-05-09', 003),
-('23015', 980.50, '2003-04-10', 004),
+('23015', 980.50, '2003-04-10', 002),
 ('23016', 1678.90, '2024-03-11', 005),
 ('23017', 1245.30, '2025-09-12', 001),
 ('23018', 1350.25, '2006-01-01', 004),
 ('23019', 1012.40, '2027-01-02', 007),
 ('23020', 1598.70, '2028-02-03', 009),
 ('23021', 1678.90, '2024-03-11', 004),
-('23022', 1245.30, '2025-10-12', 008),
+('23022', 1245.30, '2001-10-12', 008),
 ('23023', 1350.25, '2026-04-01', 006),
 ('23024', 1012.40, '2027-01-02', 007),
 ('23025', 1598.70, '2028-02-03', 002),
-('23026', 1175.85, '2029-04-04', 003);
+('23026', 1175.85, '2002-04-04', 008);
 
 select * from vendas;
 
@@ -485,3 +485,45 @@ select cliente.NOM, vendas.valor, vendas.vencimento from cliente, vendas
 where cliente.COD = vendas.COD
 AND vendas.vencimento >= '2000-01-01' 
 and vendas.vencimento <= '2003-12-31';
+
+ -- 12) 
+select cliente.NOM, vendas.vencimento, count(vendas.vencimento)
+from cliente, vendas
+where cliente.COD = vendas.COD
+AND vendas.vencimento >= '2000-01-01' 
+and vendas.vencimento <= '2003-12-31'
+group by cliente.NOM, vendas.vencimento;
+
+ -- 13)
+select cliente.COD, cliente.NOM, count(vendas.vencimento), sum(valor) as valorTotal
+from cliente, vendas
+where cliente.COD = vendas.COD
+AND vendas.vencimento >= '2000-01-01' 
+and vendas.vencimento <= '2003-12-31'
+group by cliente.NOM
+order by cliente.COD;
+
+ -- 14)
+ select cliente.COD, cliente.NOM, cliente.Cidade, count(vendas.vencimento), sum(valor) as valorTotal
+from cliente, vendas
+where cliente.COD = vendas.COD
+AND vendas.vencimento >= '2000-01-01' 
+and vendas.vencimento <= '2003-12-31'
+and  cliente.Cidade = "Santos"
+group by cliente.NOM
+order by cliente.COD;
+
+ -- 15)
+select cliente.COD, cliente.NOM, cliente.Cidade, cliente.estado, count(vendas.vencimento), sum(valor) as valorTotal
+from cliente, vendas
+where cliente.COD = vendas.COD
+AND vendas.vencimento >= '2000-01-01' 
+and vendas.vencimento <= '2003-12-31'
+and  (
+cliente.Cidade = "Santos"
+or cliente.Cidade = "Osasco"
+or cliente.Cidade = "Santo Amaro"
+)
+group by cliente.NOM
+order by cliente.COD;
+ 
