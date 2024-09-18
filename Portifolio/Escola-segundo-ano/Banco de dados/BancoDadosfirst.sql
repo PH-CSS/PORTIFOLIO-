@@ -1,5 +1,5 @@
-create database if not exists PH103;
-use PH103;
+create database if not exists PH104;
+use PH104;
 
 CREATE TABLE if not exists dep01 (
   codigo int NOT NULL auto_increment ,
@@ -514,16 +514,32 @@ group by cliente.NOM
 order by cliente.COD;
 
  -- 15)
-select cliente.COD, cliente.NOM, cliente.Cidade, cliente.estado, count(vendas.vencimento), sum(valor) as valorTotal
-from cliente, vendas
-where cliente.COD = vendas.COD
-AND vendas.vencimento >= '2000-01-01' 
-and vendas.vencimento <= '2003-12-31'
-and  (
-cliente.Cidade = "Santos"
-or cliente.Cidade = "Osasco"
-or cliente.Cidade = "Santo Amaro"
-)
-group by cliente.NOM
-order by cliente.COD;
- 
+SELECT 
+    cliente.COD,
+    cliente.NOM,
+    COUNT(vendas.duplic) AS totalDuplicados,
+    MAX(vendas.duplic) AS maxDuplicado,
+    CASE
+        WHEN COUNT(DISTINCT vendas.duplic) = 1 THEN ""
+        ELSE vendas.duplic
+    END AS valDuplic,
+    cliente.Cidade, 
+    cliente.estado, 
+    COUNT(vendas.vencimento) AS totalVencimentos, 
+    SUM(vendas.valor) AS valorTotal
+FROM 
+    cliente
+JOIN 
+    vendas ON cliente.COD = vendas.COD
+WHERE 
+    vendas.vencimento >= '2000-01-01' 
+    AND vendas.vencimento <= '2003-12-31'
+    AND (
+        cliente.Cidade = "Santos" OR 
+        cliente.Cidade = "Osasco" OR 
+        cliente.Cidade = "Santo Amaro"
+    )
+GROUP BY 
+    cliente.COD, cliente.NOM, cliente.Cidade, cliente.estado
+ORDER BY 
+    cliente.COD;
