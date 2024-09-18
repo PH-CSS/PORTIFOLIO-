@@ -3,10 +3,10 @@ use expo_Data_Base;
 
 create table if not exists usuarios(
 	id_usuario  INT(11) not null auto_increment primary key,
-    name_user varchar(150) not null,
+    name_usu varchar(150) not null,
     CPF varchar(14) not null,
-    data_nascimento DATE not null,
-    log_in varchar(50) not null,
+    data_Nascimento DATE not null,
+    -- pode dar erro dependendo da formatação que estiver
     email varchar(150) not null,
     senha varchar(45) not null
 );
