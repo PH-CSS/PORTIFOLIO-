@@ -1,0 +1,97 @@
+*{
+  padding: 0;
+  margin:0;
+  box-sizing: border-box;
+  overflow: hidden;
+}
+
+:root{
+  --bg-color:#017474;
+  --bg-body:rgb(157, 253, 253);
+}
+
+body{
+  width: 100dvw;
+  height: 100dvh;
+  background-color: var(--bg-body);
+  display:grid;
+  grid-template-columns: 1.5fr 2fr;
+  place-items: center;
+  color:white;
+  gap: 0.1%;
+}
+
+.titleSection{
+  width: 100%;
+  height: 100%;
+  display: grid;
+  place-items: start;
+  grid-template-rows: 2fr 1.5fr;
+}
+
+.graphSection{
+  position: relative;
+  display: grid;
+  width: 100%;
+  height: 100%;
+  background-color: var(--bg-color);
+  border-radius: 2rem 0 0 2rem;
+  overflow: hidden;
+}
+
+.title{
+  display: grid;
+  width: 100%;
+  height: 99.8%;
+  background-color: var(--bg-color);
+  border-radius: 0 2rem 2rem 2rem;
+
+  h1{
+    font-size: 5rem;
+    text-align: center;
+    text-justify: auto;
+  }
+
+  h3{
+    text-align: center;
+    text-justify: auto;
+  }
+
+}
+
+.infoSec{
+  width: 100%;
+  height: 100%;
+  display: grid;
+  grid-template-columns: 1fr 2fr;
+  gap: 0.2%;
+}
+
+.timebuttons{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  height: 100%;
+  background-color: var(--bg-color);
+  border-radius: 2rem 2rem 2rem 0;
+  gap: 2rem;
+
+  img{
+    width: 4rem;
+  }
+}
+
+.Pontuacao{
+  width: 100%;
+  height: 100%;
+  background-color: var(--bg-color);
+  border-radius: 2rem;
+  display: grid;
+  place-items: center;
+
+  h1{
+    font-size: 5rem;
+  }
+}
+
