@@ -536,10 +536,11 @@ WHERE
     AND vendas.vencimento <= '2003-12-31'
     AND (
         cliente.Cidade = "Santos" OR 
-        cliente.Cidade = "Osasco" OR 
-        cliente.Cidade = "Santo Amaro"
+        cliente.Cidade = "Santo Amaro" OR 
+        cliente.Cidade = "Osasco" 
     )
 GROUP BY 
     cliente.COD, cliente.NOM, cliente.Cidade, cliente.estado
 ORDER BY 
     cliente.COD;
+
