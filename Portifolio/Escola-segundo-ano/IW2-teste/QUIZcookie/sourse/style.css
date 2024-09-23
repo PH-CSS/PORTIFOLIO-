@@ -6,8 +6,13 @@
 }
 
 :root{
-  --bg-color:#017474;
-  --bg-body:rgb(157, 253, 253);
+  --bg-color:#0288D1;
+  --bg-body:#B3E5FC;
+}
+
+@font-face {
+  font-family: Mood ;
+  src: url(../sourse/MerriweatherSans-VariableFont_wght.ttf);
 }
 
 body{
@@ -19,6 +24,8 @@ body{
   place-items: center;
   color:white;
   gap: 0.1%;
+  font-family: Mood;
+  font-weight: 300;
 }
 
 .titleSection{
@@ -50,9 +57,13 @@ body{
     font-size: 5rem;
     text-align: center;
     text-justify: auto;
+    margin: 2rem;
+    flex-wrap: wrap;
   }
 
+
   h3{
+    margin-top: 10%;
     text-align: center;
     text-justify: auto;
   }
@@ -77,6 +88,15 @@ body{
   border-radius: 2rem 2rem 2rem 0;
   gap: 2rem;
 
+  button{
+    background-color: var(--bg-body);
+    border: none;
+    border-radius: 50%;
+    cursor: pointer;
+    padding: 10px;
+    outline: none;
+  }
+
   img{
     width: 4rem;
   }
@@ -92,6 +112,24 @@ body{
 
   h1{
     font-size: 5rem;
+  }
+}
+
+.nameText span{
+  margin-top: 100px;
+}
+
+.sairEntrar {
+  animation: changeName 1s ease ;
+}
+
+@keyframes changeName {
+  50%{
+    opacity: 0;
+  }
+  
+  100%{
+    opacity: 1;
   }
 }
 

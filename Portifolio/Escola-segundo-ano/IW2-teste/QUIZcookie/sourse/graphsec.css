@@ -1,15 +1,93 @@
 .round{
-  height: 100dvh;
+  z-index: 1;
   width: 50dvw;
-  background-color: rgb(236, 223, 38);
+  aspect-ratio: 1/1;
   position: absolute;
   place-self: end;
   border-radius: 50%;
-  margin-right: -35dvw;
+  margin-right: 50dvw;
+  transition: all 1s ease;
+  display: grid;
+  place-items: center;  
+  cursor: pointer;
+  animation: aparicao 1.5s ease-out forwards;
+
+  .bgprincipal{
+    width: 100%;
+    aspect-ratio: 1/1;
+    position: absolute;
+  }
+}
+
+.otherMode{
+  width:  20dvw;
+  aspect-ratio: 1/1;
+  transition: all 1s ease;
+  animation: aparicao 1.5s ease-out forwards;
+  cursor: pointer;
+  margin: 1px ;
+  transform: rotate(20deg);
+
+  img{
+    width: 100%;
+  }
+}
+
+@keyframes aparicao {
+  100%{
+  margin-right: -10dvw;
+  }
+}
+
+.otherMode:hover{
+  transform: rotate(30deg);
+}
+
+.comecar{
+  position: absolute;
+  width: 33.5%;
+  aspect-ratio: 1/1;
+  border-radius: 50%;
+  background-color: white;
+  display: grid;
+  place-items: center;
+  color: black;
+  opacity: 0;
   transition: all 1s ease;
 }
 
 .round:hover{
-    background-color:rgba(253, 253, 155, 0.295) ;
+    transform: rotate(60deg);
+
+    .goQuiz{
+      transform: rotate(-60deg);
+    }
+
+    .comecar{
+      transform: rotate(-60deg);
+      opacity: 1;
+
+    }
   }
+
+.goQuiz{
+  position: absolute;
+  width: 100px;
+  aspect-ratio: 1/1;
+  border-radius: 50%;
+  background-color: white;
+  transition: all 1s ease;
+  display:grid;
+  place-items: center;
+  color: black;
+
+  img{
+    width: 50%;
+  }
+}
+
+
+
+
+
 
