@@ -1,0 +1,103 @@
+*{
+  padding: 0;
+  margin:0;
+  box-sizing: border-box;
+  overflow: hidden;
+  margin: 0.1%;
+}
+
+:root{
+  --bg-color:#0288D1;
+  --bg-body:#B3E5FC;
+}
+
+@font-face {
+  font-family: Mood ;
+  src: url(../../../sourse/MerriweatherSans-VariableFont_wght.ttf);
+}
+
+BODY{
+  font-family: Mood;
+  width: 100dvw;
+  height: 100dvh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: #83c4e2 ;
+}
+
+.question{
+  height: 95%;
+  width: 49.9%;
+  background-color: #0288D1;
+  border-radius: 2rem;
+  display: grid;
+  place-items: center;
+
+  h1{
+    font-size: 5rem;
+    margin: 5%;
+    text-justify: auto;
+  }
+}
+
+.alternativas{
+  height: 99%;
+  width: 49.9%;
+  border-radius: 2rem;
+  display: flex;
+  justify-content: center;
+  align-items: end;
+  flex-direction: column;
+  gap: 2%;
+}
+
+.respostas{
+  height: 80%;
+  width: 100%;
+  border-radius: 2rem;
+  display: grid;
+  place-items: center;
+  grid-template-columns: repeat(2, 2fr);
+  gap: 15px;
+
+  div{
+    position: relative;
+    height: 250px;
+    aspect-ratio: 1/1;
+    background-color: #B3E5FC;
+    border-radius: 2rem;
+    cursor: pointer;
+    padding: 10px;
+    font-size: 2rem;
+    display: flex;
+    align-items: end;
+
+    .questaoDoSol{
+      height: 50px;
+      width: 100%;
+      position: absolute;
+      place-self: start;
+      font-size: 1rem;
+      display: grid;
+      place-items: start;
+      grid-template-columns: 2fr 1fr;
+
+      img{
+        width: 20px;
+        justify-self: center;
+      }
+    }
+  }
+}
+
+.verificar{
+  width: 300px;
+  height: 70px;
+  border-radius: 2rem;
+  cursor: pointer;
+  border: none;
+  outline: none;
+  place-self: center;
+  font-size: 1.5rem;
+}

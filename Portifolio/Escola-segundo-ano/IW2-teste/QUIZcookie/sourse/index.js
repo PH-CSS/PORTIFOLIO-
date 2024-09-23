@@ -3,6 +3,7 @@ const subTitle = document.querySelector(".sub")
 const titleName = document.querySelector(".nameText span");
 const bgImage = document.querySelector(".round img")
 const secondarybgImage = document.querySelector(".otherMode img")
+const linkToPage = document.querySelector(".round a")
 // console.dir(secondarybgImage.attributes[0].nodeValue);
 
 const changeModeByIMG = document.querySelector(".otherMode")
@@ -56,6 +57,9 @@ function changeMode(mode, NameNode) {
       titleName.classList.toggle('sairEntrar');
       secondarybgImage.classList.toggle('sairEntrar');
       bgImage.classList.toggle('sairEntrar');
+
+      linkToPage.href = `./quizPages/${nomeDoEscolhido}/1.htm` ;
+        
 
 
       setTimeout(() => {
