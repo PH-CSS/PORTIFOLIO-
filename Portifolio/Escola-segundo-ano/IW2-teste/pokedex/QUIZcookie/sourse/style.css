@@ -53,7 +53,7 @@ body{
   background-color: var(--bg-color);
   border-radius: 0 2rem 2rem 2rem;
 
-  & h1{
+  h1{
     font-size: 5rem;
     text-align: center;
     text-justify: auto;
@@ -62,7 +62,7 @@ body{
   }
 
 
-  & h3{
+  h3{
     margin-top: 10%;
     text-align: center;
     text-justify: auto;
@@ -88,7 +88,7 @@ body{
   border-radius: 2rem 2rem 2rem 0;
   gap: 2rem;
 
-  & button{
+  button{
     background-color: var(--bg-body);
     border: none;
     border-radius: 50%;
@@ -97,7 +97,7 @@ body{
     outline: none;
   }
 
-  & img{
+  img{
     width: 4rem;
   }
 }
@@ -110,8 +110,8 @@ body{
   display: grid;
   place-items: center;
 
-  & h1{
-    font-size: 4rem;
+  h1{
+    font-size: 5rem;
   }
 }
 

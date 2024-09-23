@@ -38,7 +38,7 @@ resps.forEach(resp => {
         Cookies.set("Contagem", 1)
       }
 
-      let arrayNomes = ["Respsun1", "Respsun2", "Respsun3", "Respsun4", "Respsun5"]
+      let arrayNomes = ["Respmoon1", "Respmoon2", "Respmoon3", "Respmoon4", "Respmoon5"]
       Cookies.set(`${arrayNomes[Cookies.get("Contagem") - 1]}`, answer)
 
       if (Cookies.get("Contagem") >= arrayNomes.length) {

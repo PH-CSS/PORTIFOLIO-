@@ -7,8 +7,8 @@
 }
 
 :root{
-  --bg-color:#0288D1;
-  --bg-body:rgb(149, 211, 211);
+  --bg-color:rgb(2, 68, 68);
+  --bg-body:rgb(134, 185, 185);
 }
 
 @font-face {

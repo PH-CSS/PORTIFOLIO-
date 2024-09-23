@@ -19,7 +19,7 @@ a{
   cursor: pointer;
   animation: aparicao 1.5s ease-out forwards;
 
-  & .bgprincipal{
+  .bgprincipal{
     width: 100%;
     aspect-ratio: 1/1;
     position: absolute;
@@ -35,7 +35,7 @@ a{
   margin: 1px ;
   transform: rotate(20deg);
 
-  & img{
+  img{
     width: 100%;
   }
 }
@@ -66,11 +66,11 @@ a{
 .round:hover{
     transform: rotate(60deg);
 
-    & .goQuiz{
+    .goQuiz{
       transform: rotate(-60deg);
     }
 
-    & .comecar{
+    .comecar{
       transform: rotate(-60deg);
       opacity: 1;
 
@@ -88,7 +88,7 @@ a{
   place-items: center;
   color: black;
 
-  & img{
+  img{
     width: 50%;
   }
 }
