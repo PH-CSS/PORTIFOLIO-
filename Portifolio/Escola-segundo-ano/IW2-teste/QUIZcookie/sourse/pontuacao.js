@@ -20,7 +20,9 @@ const gabarito = {
 }
 
 for (let i = 0; i < 5; i++) {
-  Cookies.set(`gabarito${i+1}`, gabarito[Cookies.get("mode")][i])
+  Cookies.set(`gabaritoSun${i+1}`, gabarito.sun[i])
+  Cookies.set(`gabaritoMoon${i+1}`, gabarito.moon[i])
+
 }
 
 // console.log(gabarito[Cookies.get("mode")]);
