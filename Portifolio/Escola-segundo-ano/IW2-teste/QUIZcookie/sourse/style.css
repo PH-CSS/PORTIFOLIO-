@@ -63,7 +63,7 @@ body{
 
 
   & h3{
-    margin-top: 10%;
+    margin-top: 3%;
     text-align: center;
     text-justify: auto;
   }
@@ -107,8 +107,10 @@ body{
   height: 100%;
   background-color: var(--bg-color);
   border-radius: 2rem;
-  display: grid;
-  place-items: center;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10%;
 
   & h1{
     font-size: 4rem;

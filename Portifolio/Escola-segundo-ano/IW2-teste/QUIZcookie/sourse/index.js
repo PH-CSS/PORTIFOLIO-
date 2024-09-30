@@ -15,8 +15,11 @@ changeModeByIMG.addEventListener("click", () =>{
 })
 
 window.addEventListener('pageshow', (e) => {
+  Cookies.set("Contagem", 0)
+  
   if (!Cookies.get("mode")) {
     Cookies.set("mode", "sun") ;
+
   }else{
     changeMode(Cookies.get("mode"))
     const pontuacao = document.querySelectorAll(".Pontuacao h1")

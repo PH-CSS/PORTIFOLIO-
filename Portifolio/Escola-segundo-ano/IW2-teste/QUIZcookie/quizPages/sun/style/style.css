@@ -8,7 +8,7 @@
 
 :root{
   --bg-color:#0288D1;
-  --bg-body:rgb(149, 211, 211);
+  --bg-body:#89b3c7;
 }
 
 @font-face {
@@ -106,5 +106,6 @@ BODY{
   place-self: center;
   font-size: 1.5rem;
   opacity: 0;
+  visibility: hidden;
   transition: all 1s ease;
 }
