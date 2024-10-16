@@ -45,12 +45,13 @@ if (ISSET($_GET['submit'])) {
     $login = $_GET['login'];
     $senha = $_GET['senha'];
 
-    $result = $conexao->prepare("INSERT INTO usuarios
-    VALUE
-        ('$nome', '$cpf', '$data', '$email', '$login', '$senha')
-    ");
+    // $result = $conexao->prepare("INSERT INTO usuarios
+    // VALUE
+    //     ('$nome', '$cpf', '$data', '$email', '$login', '$senha')
+    // ");
     
-    $result->execute();
+    $result->execute(); 
+
 }
 
 ?>

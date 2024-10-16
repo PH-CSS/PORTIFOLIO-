@@ -10,7 +10,7 @@
 <body>
     <?php
     $res = null;
-    $list = [];
+    $lista = [];
     $algo = null;
     $ePar = 0;
     $eImpar = 0;
@@ -19,11 +19,11 @@
     if (ISSET($_GET["enviar"])) {
         for ($i=1; $i <= 10 ; $i++) { 
         $numb = (ISSET($_GET["num$i"])) ? $_GET["num$i"] : 0;
-        array_push($list, $numb);
+        array_push($lista, $numb);
         }
        
     };
-    foreach ($list as $key => $value) {
+    foreach ($lista as $key => $value) {
         if ($value % 2 == 0) {
             $ePar = $ePar + 1 ;
         }else{

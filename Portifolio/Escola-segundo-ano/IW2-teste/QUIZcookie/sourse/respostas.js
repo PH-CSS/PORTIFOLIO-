@@ -37,7 +37,7 @@ for (let i = 1; i <= 5; i++) {
     }
   }else if (Cookies.get(`Resp${Cookies.get("mode")}${i}`) === Cookies.get(`Respmoon${i}`)) {
     if (Cookies.get(`Resp${Cookies.get("mode")}${i}`) === Cookies.get(`gabaritoMoon${i}`)) {
-          const p = document.createElement("p");
+    const p = document.createElement("p");
     p.textContent = `${i})`;
     paragrafo.appendChild(p);
     const h1 = document.createElement("h1");

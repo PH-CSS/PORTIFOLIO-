@@ -17,8 +17,7 @@ $num2 = (ISSET($_GET['num2'])) ? $_GET['num2'] : null;
 $resposta = ($num > $num2 ) ? 
      $num2 / $num
    : 
-    $num / $num2
-;
+    $num / $num2;
 
 ?>
 
