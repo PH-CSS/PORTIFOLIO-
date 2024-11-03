@@ -11,14 +11,15 @@
     <link rel="stylesheet" href="../ultil/cardStart.css">
     <link rel="stylesheet" href="../ultil/BGtransition.css">
     <script src="../ultil/javascript/transitionOnClick.js" defer></script>
+    <script src="../ultil/javascript/loginChange.js" defer></script>
     <script src="../ultil/javascript/getData.js" defer></script>
 
-
+<!-- https://sistema.infinityfreeapp.com/aula/SW/?i=1 -->
 </head>
 <body>
 <?php
 // Inclua a classe Database
-include_once('dbase.php');
+include_once 'dbase.php';
 
 // Crie uma instância da classe
 $db = new Database();
@@ -26,35 +27,121 @@ $db = new Database();
 // Obtenha a conexão
 $conexao = $db->getConexao();
 
-// Use a conexão conforme necessário, por exemplo:
-$result = $conexao->prepare("SELECT * FROM usuarios");
 
-$result->execute();
+if (isset($_GET['login'])) {
+    if (isset($_GET['submit'])) {
+        $login = $_GET['login'];
+        $senha = $_GET['senha'];
+    
+        // Certifique-se de que todos os campos foram preenchidos
+        if ($login && $senha) {
+            // Verificar se o login já existe
+            $contador = 0;
 
-$data = $result->fetchAll();
-
-print_r($data);
-// fim de conexão
-
-if (ISSET($_GET['submit'])) {
-
+            $result = $conexao->prepare("SELECT log_in FROM usuarios WHERE log_in = ? ");
+            $result->execute([$login]);
+            $data = $result->fetchAll();
+            $contador += count($data);
+            echo $contador;
+            
+            $result = $conexao->prepare("SELECT senha FROM usuarios WHERE log_in = ? ");
+            $result->execute([$login]);
+            $data = $result->fetchAll();
+            print_r($data);
+            echo $contador;
+        };
+            
+            if ($contador > 0) {
+                 echo "hello user.";
+            };
+        };
+    };
+ 
+    if(isset($_GET['cadastro'])){
+    if (isset($_GET['submit'])) {
     $nome  = $_GET['nome'];
     $cpf = $_GET['CPF'];
-    $data = $_GET['data'];
+    $data_nascimento = $_GET['data'];
     $email = $_GET['email'];
     $login = $_GET['login'];
     $senha = $_GET['senha'];
 
-    // $result = $conexao->prepare("INSERT INTO usuarios
-    // VALUE
-    //     ('$nome', '$cpf', '$data', '$email', '$login', '$senha')
-    // ");
-    
-    $result->execute(); 
+    // Certifique-se de que todos os campos foram preenchidos
+    if ($nome && $cpf && $data_nascimento && $email && $login && $senha) {
+        // Verificar se o login já existe
+        $result = $conexao->prepare("SELECT log_in, CPF FROM usuarios WHERE log_in = ? AND CPF = ? ");
+        $result->execute([$login, $cpf]);
+        $data = $result->fetchAll();
 
+        // A consulta SELECT log_in FROM usuarios WHERE log_in = ? 
+        // busca o valor de log_in na tabela usuarios 
+        // onde o valor de log_in for igual ao parâmetro substituído pelo ?.
+        // "$result->execute([$login])";
+        // O uso do ? como placeholder é parte de uma estratégia para 
+        // proteger o sistema contra ataques de SQL Injection e também para 
+        // facilitar a reutilização de consultas.
+
+        if (count($data) > 0) {
+            // echo "Já existe um usuário com esse login.";
+        } else {
+            // Hash da senha para armazenamento seguro
+            $senha_hashed = password_hash($senha, PASSWORD_DEFAULT);
+
+            // Inserir novo usuário no banco de dados
+            try {
+                $result = $conexao->prepare("INSERT INTO usuarios (name_user, cpf, data_nascimento, email, log_in, senha) VALUES (?, ?, ?, ?, ?, ?)");
+                $result->execute([$nome, $cpf, $data_nascimento, $email, $login, $senha_hashed]);
+                // echo "Usuário cadastrado com sucesso!";
+            } catch (PDOException $e) {
+                echo "Erro ao cadastrar o usuário: " . $e->getMessage();
+            }
+        }
+        };
+
+        // Resetar os valores do formulário
+        $nome = $cpf = $data_nascimento = $email = $login = $senha = null;
+        }
+}else{
+    
+    if (isset($_GET['submit'])) {
+        $nome  = $_GET['nome'];
+        $cpf = $_GET['CPF'];
+        $data_nascimento = $_GET['data'];
+        $email = $_GET['email'];
+        $login = $_GET['login'];
+        $senha = $_GET['senha'];
+    
+        // Certifique-se de que todos os campos foram preenchidos
+        if ($nome && $cpf && $data_nascimento && $email && $login && $senha) {
+            // Verificar se o login já existe
+            $result = $conexao->prepare("SELECT log_in, CPF FROM usuarios WHERE log_in = ? AND CPF = ? ");
+            $result->execute([$login, $cpf]);
+            $data = $result->fetchAll();
+    
+            if (count($data) > 0) {
+                // echo "Já existe um usuário com esse login.";
+            } else {
+                // Hash da senha para armazenamento seguro
+                $senha_hashed = password_hash($senha, PASSWORD_DEFAULT);
+    
+                // Inserir novo usuário no banco de dados
+                try {
+                    $result = $conexao->prepare("INSERT INTO usuarios (name_user, cpf, data_nascimento, email, log_in, senha) VALUES (?, ?, ?, ?, ?, ?)");
+                    $result->execute([$nome, $cpf, $data_nascimento, $email, $login, $senha_hashed]);
+                    // echo "Usuário cadastrado com sucesso!";
+                } catch (PDOException $e) {
+                    echo "Erro ao cadastrar o usuário: " . $e->getMessage();
+                }
+            }
+            };   
+    
+            // Resetar os valores do formulário
+            $nome = $cpf = $data_nascimento = $email = $login = $senha = null;
+            }
 }
 
 ?>
+
 
 <!-- parte de introdução -->
  <div class="infoStart">
@@ -138,6 +225,7 @@ if (ISSET($_GET['submit'])) {
 
     </div>
     <div class="inputSection">
+
         <section>
             <h1>Sign Up</h1>
             <h2>Just do it's free</h2>
@@ -145,17 +233,20 @@ if (ISSET($_GET['submit'])) {
     
         <form action="" method="_GET">
             <div class="inputArea">   
-                <input class="areaIdent" type="text" placeholder="Nome completo" name="nome"required>
-                <input class="areaIdent" maxlength="14" type="text" placeholder="CPF" name="CPF"  required> 
-                <input class="areaIdent" type="date" placeholder="Data de nascimento" name="data" required>
-                <input class="areaIdent" type="email" placeholder="email" name="email"  required>  
+                <input class="cadastro areaIdent" type="text" placeholder="Nome completo" name="nome"required>
+                <input class="cadastro areaIdent" maxlength="14" type="text" placeholder="CPF" name="CPF"  required> 
+                <input class="cadastro areaIdent" type="date" placeholder="Data de nascimento" name="data" required>
+                <input class="cadastro areaIdent" type="email" placeholder="email" name="email"  required>  
                 <div class="sameArea"> 
-                    <input class="areaIdent" type="text" placeholder="Login" name="login" required>  
-                    <input class="areaIdent" type="password" placeholder="Senha" name="senha" required>
+                    <input class="areaIdent" class="loginArea" type="text" placeholder="Login" name="login" required>  
+                    <input class="loginArea" type="password" placeholder="Senha" name="senha" required>
                 </div>
-    
+
             </div>
-            <button type="submit" name="submit" class="cad">Cadastrar</button>
+            <section>
+                <button type="submit" name="submit" class="cad">Cadastrar</button>
+                <button name="login" class="login">Já possui uma conta?</button>
+            </section>
         </form>
     </div>
 </div>

@@ -6,8 +6,8 @@ create table if not exists usuarios(
     name_user varchar(150) not null,
     CPF varchar(14) not null,
     data_nascimento DATE not null,
-    log_in varchar(50) not null,
     email varchar(150) not null,
+    log_in varchar(50) not null,
     senha varchar(45) not null
 );
 

@@ -1,0 +1,50 @@
+*{
+  padding: 0;
+  margin: 0;
+  overflow: hidden;
+}
+body{
+  height: 100dvh;
+  width: 100dvw;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+
+  & h1{
+    font-family: "Tiny5", sans-serif;
+  }
+}
+
+.pontuacao{
+  position: absolute;
+  padding-top: 5%;
+  place-self: start;
+}
+
+.background{
+  width: 95dvw;
+  height: 25%;
+  padding-left: 20px;
+  display: flex;
+  align-items: end;
+  border-bottom: solid black 1px;
+
+  & .personagem{
+      width: 120px;
+      aspect-ratio: 1/1;
+      position: relative;
+      background-image: url(../img/movimentoPadrao.gif);
+      background-position: center;
+      background-repeat: no-repeat;
+      background-size: cover;
+   };
+  & .obstaculo{
+    width: 100px;
+    aspect-ratio: 1/1;
+    background-color: aqua;
+  }
+}
+
+
+

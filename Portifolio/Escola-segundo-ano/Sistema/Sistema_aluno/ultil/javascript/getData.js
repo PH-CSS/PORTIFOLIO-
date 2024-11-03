@@ -19,7 +19,6 @@ for (let index = 0; index < changeInfo.length; index++) {
           console.log(chageSet[y].value);
         }
         else{
-
           function cpfMask(value) {
             return value
                 .replace(/\D/g, '')                     // Remove caracteres não numéricos

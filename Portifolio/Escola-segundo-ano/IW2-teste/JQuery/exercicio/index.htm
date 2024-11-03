@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="JQuery/jquery-3.7.1.min.js"></script>
+    <script src="script.js" defer></script>
+    <style>
+        *{
+            padding: 0;
+            margin: 0;
+        }
+        body{
+            height: 100dvh;
+            width: 100dvw;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-direction: column;
+            gap: 5%;
+        }
+        .contenao{
+            display: grid;
+            width: 70%;
+            gap: 50px;
+            place-items: center;
+            grid-template-columns: repeat(3, 3fr);
+        }
+
+        .container{
+            background-color: bisque;
+            display: flex;
+            width: 200px;
+            aspect-ratio: 1/1;
+        }
+
+        .inputSection{
+            display: flex;
+            gap: 20px;
+
+            & button{
+                width: 150px;
+                height: 75px;
+                border-radius: 2rem;
+                border: none;
+                cursor: pointer;
+            }
+        }
+
+    </style>
+</head>
+<body>
+    <div class="contenao">
+        <div class="container">texto para justificar </div>
+        <div class="container">texto para justificar</div>
+        <div class="container">texto para justificar</div>
+        <div class="container">texto para justificar</div>
+        <div class="container">texto para justificar</div>
+        <div class="container">texto para justificar</div>
+        <div class="container">texto para justificar</div>
+        <div class="container">texto para justificar</div>
+        <div class="container">texto para justificar</div>
+    </div>
+
+    <div class="inputSection">
+        <div class="just">
+            <button class="end">Direita</button>
+            <button class="start">Esquerda</button>
+            <button class="center">Center</button>
+            <button class="justify">justificar</button>
+        </div>
+        
+        <div class="align">
+            <button id="justify" class="start">up</button>
+            <button id="justify" class="end">down</button>
+            <button id="justify" class="center">center</button>
+        </div>
+
+    </div>
+</body>
+</html>
