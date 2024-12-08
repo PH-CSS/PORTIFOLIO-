@@ -1,1 +1,1 @@
-Pasta escolar para independente do momento tenha tudo salvo
+Pasta escolar, para que independente do momento tenha tudo salvo
