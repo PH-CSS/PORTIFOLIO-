@@ -5,17 +5,18 @@
 }
 
 body{
-  height: 100dvh;
-  width: 100dvw;
+  height: 100vh;
+  width: 100vw;
   display: flex;
   align-items: center;
   justify-content: center;
   position: relative;
 
-  & h1, h2{
+
+}   
+   h1, h2{
     font-family: "Tiny5", sans-serif;
   }
-}
 
 .preGame{
   width: 100%;
@@ -25,12 +26,15 @@ body{
   place-content: center;
   background-color: rgba(0, 0, 0, 0.452);
 
-  & h1, h2{
+
+
+}   
+.preGame > h1, h2{
     color: azure;
     text-align: center;
   }
 
-  & .buttons{
+   .buttons{
     display: grid;
     place-content: center;
     place-self: center;
@@ -38,17 +42,16 @@ body{
     grid-template-columns: repeat(2, 2fr);
     padding-bottom: 10%;
 
-    & img{
-      width: 75%;
+
+  }    
+   img{
+      width: 50%;
     }
 
-    & div{
+    .buttons > div{
       display: grid;
       place-items: center;
     }
-  }
-
-}
 
 .pontuacao{
   position: absolute;
@@ -57,14 +60,16 @@ body{
 }
 
 .background{
-  width: 95dvw;
+  width: 95vw;
   height: 25%;
   padding-left: 20px;
   display: flex;
   align-items: end;
   border-bottom: solid black 1px;
 
-  & .personagem{
+  
+} 
+.personagem{
       width: 120px;
       aspect-ratio: 1/1;
       position: relative;
@@ -74,12 +79,11 @@ body{
       background-repeat: no-repeat;
       background-size: cover;
    };
-  & .obstaculo{
+   .obstaculo{
     width: 100px;
-    aspect-ratio: 1/1;
+    height: 100px;
     background-color: aqua;
   }
-}
 
 .restart{
   width: 100%;

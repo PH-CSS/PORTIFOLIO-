@@ -24,8 +24,6 @@ class Database {
     public function getConexao() {
         return $this->conexao;
     }
-
-
 }
 
 ?>

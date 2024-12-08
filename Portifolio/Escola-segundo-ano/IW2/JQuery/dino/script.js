@@ -30,10 +30,10 @@ function easy() {
     let pulando = false;
 
     function pular() {
-        if (!pulando) { 
+        if (!pulando && jogoAtivo) { 
             pulando = true;
-            $(".personagem").animate({ top: posicaoPersona.top - $(".background")[0].clientHeight + 'px' });
-            $(".hitbox").animate({ top: posicaoPersona.top - 200 + 'px' });
+            $(".personagem").animate({ top: posicaoPersona.top - $(".background")[0].clientHeight - 60 + 'px' });
+            $(".hitbox").animate({ top: posicaoPersona.top - 300 + 'px' });
             
             $(".personagem").animate({ top: posicaoPersona.top + 'px' });
             $(".hitbox").animate({ top: posicaoPersona.top + 'px' }, {
@@ -55,7 +55,10 @@ function easy() {
 
         objeto.css({
             "position": "absolute",
-            "left": spawnPlace.left + $(".background")[0].clientWidth + "px"
+            "left": spawnPlace.left + $(".background")[0].clientWidth + "px",
+            'width': 100+"px",
+            'height': 100+"px",
+            'background-color': 'aqua'
         });
 
         $(".background").append(objeto);
@@ -87,7 +90,7 @@ function easy() {
     
         let reset = $('<div></div>').addClass("restart");
         $("body").append(reset);
-        0
+        
         let reini = $("<H1>PRESS ENTER PARA REINICIAR</H1>").addClass("restartTXT");
         $(".restart").append(reini);
 
@@ -122,7 +125,7 @@ function easy() {
                 console.log("Colisão detectada!");
                 jogoAtivo = false; // Para o jogo
                 $(".obstaculo").stop(); // Para todas as animações dos obstáculos
-                // $(".personagem").stop(); // Para a animação de pulo do personagem
+                $(".personagem").stop(); // Para a animação de pulo do personagem
                 clearInterval(spawnInterval);
                 clearInterval(scoreInterval);
                 // trocar imagem quando morre
@@ -144,7 +147,7 @@ function easy() {
 
     $(document).on('keydown', function(e) {
         switch (e.key) {
-            case "w":
+            case "w": 
             case "ArrowUp":
                 pular();
                 break;

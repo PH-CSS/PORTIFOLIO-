@@ -26,7 +26,6 @@ $db = new Database();
 
 // Obtenha a conexão
 $conexao = $db->getConexao();
-$mensagemErro  = "OLÁ USUÁRIO";
 
 
 if (isset($_POST['login'])) {
@@ -35,24 +34,21 @@ if (isset($_POST['login'])) {
         $senha = $_POST['senha'];
     
         // Certifique-se de que todos os campos foram preenchidos
-        session_start();
         if ($login && $senha) {
 
             $result = $conexao->prepare("SELECT log_in FROM usuarios WHERE log_in = ? ");
             $result->execute([$login]);
             $data = $result->fetchAll();
             if (count($data) <= 0) {
-                $mensagemErro = "Usuario não existente ";
+                echo "Usuario não existente ";
             }else{
             $result = $conexao->prepare("SELECT senha FROM usuarios WHERE log_in = ? ");
             $result->execute([$login]);
             $data = $result->fetch(mode: PDO::FETCH_ASSOC);
-
             if ($senha == $data['senha']) {
-                header('Location: ./view/home.php');  
-                exit();
+                // header('Location: home.php');  
             }else{
-                $mensagemErro = "wrong password ";
+                echo "wrong password ";
             };
         }
 
@@ -62,7 +58,7 @@ if (isset($_POST['login'])) {
     };
  
     if(isset($_POST['cadastro'])){
-
+    if (isset($_POST['submit'])) {
     $nome  = $_POST['nome'];
     $cpf = $_POST['CPF'];
     $data_nascimento = $_POST['data'];
@@ -70,7 +66,6 @@ if (isset($_POST['login'])) {
     $login = $_POST['login'];
     $senha = $_POST['senha'];
 
-    $_SESSION["usuario"] = $nome;
     // Certifique-se de que todos os campos foram preenchidos
     if ($nome && $cpf && $data_nascimento && $email && $login && $senha) {
         // Verificar se o login já existe
@@ -87,7 +82,7 @@ if (isset($_POST['login'])) {
         // facilitar a reutilização de consultas.
 
         if (count($data) > 0) {
-            $mensagemErro = "Já existe um usuário com esse login. ";
+            echo "Já existe um usuário com esse login. ";
         } else {
             // Hash da senha para armazenamento seguro
             // $senha = password_hash($senha, PASSWORD_DEFAULT);
@@ -96,17 +91,16 @@ if (isset($_POST['login'])) {
             try {
                 $result = $conexao->prepare("INSERT INTO usuarios (name_user, cpf, data_nascimento, email, log_in, senha) VALUES (?, ?, ?, ?, ?, ?)");
                 $result->execute([$nome, $cpf, $data_nascimento, $email, $login, $senha]);
-                $mensagemErro = "Usuário cadastrado com sucesso! ";
-                header('Location: ./view/home.php');  
-                exit();
+                echo "Usuário cadastrado com sucesso! ";
             } catch (PDOException $e) {
-                $mensagemErro = "Erro ao cadastrar o usuário: " . $e->getMessage();
+                echo "Erro ao cadastrar o usuário: " . $e->getMessage();
             }
         }
         };
 
         // Resetar os valores do formulário
         $nome = $cpf = $data_nascimento = $email = $login = $senha = null;
+        }
 }else{
     
     if (isset($_POST['submit'])) {
@@ -125,7 +119,7 @@ if (isset($_POST['login'])) {
             $data = $result->fetchAll();
     
             if (count($data) > 0) {
-                $mensagemErro = "Já existe um usuário com esse login. ";
+                echo "Já existe um usuário com esse login. ";
             } else {
                 // Hash da senha para armazenamento seguro
                 // $senha = password_hash($senha, PASSWORD_DEFAULT);
@@ -134,9 +128,9 @@ if (isset($_POST['login'])) {
                 try {
                     $result = $conexao->prepare("INSERT INTO usuarios (name_user, cpf, data_nascimento, email, log_in, senha) VALUES (?, ?, ?, ?, ?, ?)");
                     $result->execute([$nome, $cpf, $data_nascimento, $email, $login, $senha]);
-                    // $mensagemErro = "Usuário cadastrado com sucesso!";
+                    // echo "Usuário cadastrado com sucesso!";
                 } catch (PDOException $e) {
-                    $mensagemErro = "Erro ao cadastrar o usuário: " . $e->getMessage();
+                    echo "Erro ao cadastrar o usuário: " . $e->getMessage();
                 }
             }
             };   
@@ -162,9 +156,7 @@ if (isset($_POST['login'])) {
             </div>
             <div class="textArea">
                 <!-- msg de texto -->
-                <div class="msg" name="mensagemErro">
-                    <?php echo $mensagemErro ?>
-                </div>
+                <div class="msg">OLÁ CONVIDADO!</div>
             </div>
             </div>
             <div class="buttonArea">
@@ -252,8 +244,8 @@ if (isset($_POST['login'])) {
 
             </div>
             <section>
-                <button type="submit" name="cadastro" class="cad">Cadastrar</button>
-                <input type="button" name="logInpage" class="login" value="Já possui uma conta?">
+                <button type="submit" name="submit" class="cad">Cadastrar</button>
+                <button name="login" class="login">Já possui uma conta?</button>
             </section>
         </form>
     </div>

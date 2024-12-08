@@ -1,0 +1,34 @@
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+body{
+    overflow-x: hidden;
+    height: 100vh;
+    width: 100vw;
+    display: grid;
+    place-items: center;
+}
+
+.secao{
+    width: 60%;
+    padding-top: 35px;
+}
+
+h2{
+    text-align: center;
+    background-color: cadetblue;
+    padding: 10px 20px;
+    border-radius: 1rem 1rem 0 0 ;
+}
+
+.closed{
+    display: none;
+    place-items: center;
+    background-color: brown;
+}
+
+img{
+    width: 100%;
+}

@@ -12,7 +12,7 @@ change.addEventListener("click", () =>{
     });
     logSec.style.flexDirection = "column";
     logSec.style.width = "30dvw"
-    change.value = "cadastrar"
+    change.textContent = "cadastrar"
     change.name = "cadastro" ;
     cadastroBNT.textContent = "Entrar"
     condicao = false;
@@ -24,8 +24,8 @@ change.addEventListener("click", () =>{
         });
         logSec.style.flexDirection = "row";
         logSec.style.width = "100%"
-        change.value = "já possui uma conta?"
-        change.name = "logInpage" ;
+        change.textContent = "já possui uma conta?"
+        change.name = "login" ;
         cadastroBNT.textContent = "Cadastrar"
         condicao = true;
     };
