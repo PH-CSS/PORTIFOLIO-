@@ -11,7 +11,7 @@
 <body>
 
 <?php
-include_once('dbase.php');
+include_once'dbase.php';
 
 $db = new Database();
 
@@ -49,10 +49,10 @@ $conexao = $db -> getConexao();
         <h2>Login realizado com sucesso</h2>
     </div>
     <div class="sideMenu">
-        <div class="sidepop Home"           >           <img src="..\ultil\img/home-4-svgrepo-com.png" alt=""></div>
-        <div class="sidepop Dados-Pessoais" >   <img src="..\ultil\img/person-circle-svgrepo-com.png" alt=""></div>
-        <div class="sidepop Escolaridade"   >          <img src="..\ultil\img\hat-svgrepo-com.png" alt=""></div>
-        <button class="sidepop Sair"        >          <img src="..\ultil\img/poweroff-svgrepo-com.png" alt=""></button>
+        <div class="sidepop Home"           > <img src="..\ultil\img/home-4-svgrepo-com.png" alt=""></div>
+        <div class="sidepop Dados-Pessoais" > <img src="..\ultil\img/person-circle-svgrepo-com.png" alt=""></div>
+        <div class="sidepop Escolaridade"   > <img src="..\ultil\img\hat-svgrepo-com.png" alt=""></div>
+        <button class="sidepop Sair"        > <img src="..\ultil\img/poweroff-svgrepo-com.png" alt=""></button>
     </div>
     <div class="areaPopup">
         <div class="seta"></div>

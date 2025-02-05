@@ -14,7 +14,7 @@
         $resScreen = '';
         for ($i = 1; $i <= 20; $i++) { 
             $sum = $primaryNum + $secondyNum;
-           $resScreen = $resScreen . "<p>${i}º) $secondyNum + $primaryNum = $sum</p>";
+           $resScreen = $resScreen . `<p> $i $secondyNum + $primaryNum = $sum</p>`;
            $secondyNum = $primaryNum;
            $primaryNum = $sum;
         } 

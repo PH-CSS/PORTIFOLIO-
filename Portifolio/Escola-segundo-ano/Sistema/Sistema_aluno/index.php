@@ -3,11 +3,13 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>SIstema aluno</title>
 </head>
 <body>
     <?php 
-        include_once "control/navigation.php";
+    // É incluido um navegador sempre pelo index, para evitar que o próprio usuário 
+    // use o link da página para se locomover pelo site
+    include_once "control/navigation.php";
     ?>
 </body>
 </html>

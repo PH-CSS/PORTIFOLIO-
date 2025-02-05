@@ -1,4 +1,6 @@
 <?php
+// conecão com o banco de dados
+// a classe contribui com as informações para o acesso do banco de dados alocado para esse serviço 
 class Database {
     private $dsn = 'mysql:host=localhost;dbname=expo_data_base';
     private $usuario = 'root';
