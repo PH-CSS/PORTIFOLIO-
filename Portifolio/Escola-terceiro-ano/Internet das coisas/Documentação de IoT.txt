@@ -1,0 +1,15 @@
+° O que é Internet :
+	- uma conexão mundial das pessoas e dispositivos
+
+- www : World wide web
+
+- Intranet : conexão de pessoas e dispositivos localmente 
+
+- Primeira página web : Tim Burners-lee
+
+° Componentes de rede :
+	- componentes tateaveis da Internet como: fios, computadores, Iot's
+	- E em alguns casos, as descrições de componente de rede são aqueles que são configuraveis como: switch, moldem, etc
+	- componentes que formam a Internet 
+
+
