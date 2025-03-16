@@ -1,4 +1,4 @@
-° O que é Internet :
+º O que é Internet :
 	- uma conexão mundial das pessoas e dispositivos
 
 - www : World wide web
@@ -7,9 +7,43 @@
 
 - Primeira página web : Tim Burners-lee
 
-° Componentes de rede :
+º Componentes de rede :
 	- componentes tateaveis da Internet como: fios, computadores, Iot's
 	- E em alguns casos, as descrições de componente de rede são aqueles que são configuraveis como: switch, moldem, etc
 	- componentes que formam a Internet 
 
+º Modelo OSI/ISO : 
+ "padrão de comunicação entre dispositivos de diferentes marcas"
+ "divisão de 7 camandas"
+ -trabalhos divididos por camadas
 
+º A camada de transporte TCP/IP :
+No modelo TCP/IP, a camada localizada acima da camada inter-redes é chamada camada de
+transporte. A finalidade dessa camada é permitir que as entidades pares dos hosts de origem e de
+destino mantenham uma conversação, exatamente como acontece na camada de transporte OSI
+
+º MGbite / MBbytes
+
+º NETWORK:
+
+	CLASSE C = (Id da rede = 192.168.0.)(Rede do computador = X-2) (Redes locais)
+	x = 0 = unicast
+	x = 255= brocast
+
+	Redes totais = 253
+
+	CLASSE B = (Id da rede = 172.16.)(Rede do computador = Y.X-2) (Redes locais)
+	x = 0 = unicast
+	x = 255= brocast
+
+	Redes totais = 65.023
+
+	CLASSE A = (Id da rede = 10.)(Rede do computador = Z.Y.X-2) (Redes locais)
+	x = 0 = unicast
+	x = 255= brocast
+
+	Redes totais = 16.581.373
+
+
+	
+	

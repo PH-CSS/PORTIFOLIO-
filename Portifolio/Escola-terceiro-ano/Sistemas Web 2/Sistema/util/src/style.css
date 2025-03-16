@@ -1,0 +1,20 @@
+.w3-sidebar{
+    width: 120px;
+}
+
+body{
+    font-family: "Montserrat", sans-serif;
+}
+
+/*  */
+.section{
+    display: none;
+}
+
+/* seção ativa */
+.section.active{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-decoration: dashed;
+}

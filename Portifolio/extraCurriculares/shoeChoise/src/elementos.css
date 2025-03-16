@@ -4,7 +4,7 @@
 
 .elemento {
     display: flex;
-    justify-content: center;
+    justify-content:    ;
     gap: 25px;
     width: max-content;
     position: relative;
