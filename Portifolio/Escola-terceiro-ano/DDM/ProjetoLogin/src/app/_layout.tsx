@@ -1,7 +1,15 @@
 import { Slot } from "expo-router";
-import { openDatabase } from "@/database/initializeDatabase";
+import { SQLiteProvider } from "expo-sqlite";
+
+import { initializeDatabase } from "@/database/initializeDatabase";
+import { UserProvider } from "@/app/userContext"; // Importa o contexto
 
 export default function Layout() {
-  openDatabase();
-  return <Slot />;
+  return(
+    <UserProvider>
+      <SQLiteProvider databaseName="myDatabase.db" onInit={initializeDatabase}>
+        <Slot />
+      </SQLiteProvider>
+    </UserProvider>
+  ) 
 }
