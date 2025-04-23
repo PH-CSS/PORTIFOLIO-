@@ -1,18 +1,21 @@
-import { View, Text, Button, Alert } from "react-native";
-import { useEffect, useState } from "react";
-import { Link, router } from "expo-router";
+import { View, Text, Button, Alert, Animated  } from "react-native";
+import { useEffect, useState, useRef } from "react";
+import { router } from "expo-router";
 
 import { Input } from "@/components/input";
 import { useUsuarioDatabase, UsuarioDatabase } from "@/database/useUsuarioDatabase";
 import { UsuariosList } from "@/components/usuarios";
+import AnimatedHendlePress from "@/components/animacao";
 
 
 export default function index(){
   const [id, setId] = useState("");
   const [name, setName] = useState("");
-  const [search, setSearch] = useState("");
   const [senha, setSenha] = useState("");
   const [erroSenha, setErroSenha] = useState(false);
+
+  const [search, setSearch] = useState("");
+
   // para fazer a variavel :
   // (tipo dela) [nome (que será usado para pegar a variavel), (nome da função)] = useStade((tipo da variavel))
   const [usuarios, setUsuarios] = useState<UsuarioDatabase[]>([]);
@@ -21,7 +24,7 @@ export default function index(){
 
   async function create() {
     try {
-      if (senha.length <= 4) {
+      if (senha.length < 4) {
         return Alert.alert("Tamanho da senha", "A senha precisa ter mais que 4 letras")
 
       }
@@ -36,7 +39,7 @@ export default function index(){
         // Cadastrar normalmente
 
         const response = await Usuarios.create({name, senha})
-        Alert.alert("Produto cadastrado com sucesso ID: " + response.insertID)
+        Alert.alert("Cadastrado com sucesso ID: " + response.insertID)
         router.push("/loginPage");
 
         list()
@@ -59,7 +62,9 @@ export default function index(){
   useEffect(() => {
     list()
   },[search])
-
+  
+  // verificar se a senha é valida e registra ela
+  // se não for afeta o próprio css da estrutura
   function passwordValidantion(text: string) {
     setSenha(text);
     setErroSenha(text.length < 4);
@@ -81,10 +86,9 @@ export default function index(){
       }}
       />
       <Button title="Cadastrar" onPress={create} />
-      <Link href={"/loginPage"}>Entrar em uma conta</Link>
+
+      <AnimatedHendlePress/>
       
-
-
     </View>
   )
 }
