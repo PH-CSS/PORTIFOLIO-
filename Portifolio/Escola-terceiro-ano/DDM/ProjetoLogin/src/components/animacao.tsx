@@ -61,7 +61,7 @@ export default function AnimatedHendlePress() {
   return(
     <Animated.Text
       onPress={handlePress}
-      style={{ fontSize: 24, color: interpolatedColor }}>
+      style={{ fontSize: 16, color: interpolatedColor }}>
       {message}
     </Animated.Text>
   )

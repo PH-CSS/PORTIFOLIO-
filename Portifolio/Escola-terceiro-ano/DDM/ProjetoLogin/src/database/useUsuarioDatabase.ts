@@ -1,8 +1,4 @@
-import * as SQLite from "expo-sqlite"
-import * as FileSystem from 'expo-file-system';
-import { Alert } from "react-native";
 import { useSQLiteContext } from "expo-sqlite";
-
 
 export type UsuarioDatabase = {
   id: number,
@@ -17,21 +13,20 @@ export function useUsuarioDatabase() {
       const statement = await database.prepareAsync(
           "INSERT INTO usuarios (name, senha) VALUES ($name, $senha) "
       );
-
       try {
         const result = await statement.executeAsync({
           $name: data.name,
           $senha: data.senha
         })
-
         const insertID = result.lastInsertRowId.toLocaleString()
-
         return {insertID}
 
       } catch (error) {
           throw error;
+
       } finally{
         await statement.finalizeAsync()
+
       }
   };
 
@@ -40,8 +35,8 @@ export function useUsuarioDatabase() {
       const query = "SELECT * FROM usuarios WHERE name LIKE ?"
 
       const response = await database.getAllAsync<UsuarioDatabase>(query, `%${name}%`)
-
       return response;
+
     } catch (error) {
       throw error;
     }

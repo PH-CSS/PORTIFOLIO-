@@ -1,20 +1,28 @@
-import { View, Button, Alert } from "react-native";
-import { useEffect, useState } from "react";
+import { View, Text, TouchableOpacity, Alert, Animated } from "react-native";
+import { useEffect, useState, useRef } from "react";
 import { router, Link } from "expo-router";
 import { Input } from "@/components/input";
 import { useUsuarioDatabase, UsuarioDatabase } from "@/database/useUsuarioDatabase";
-import { useUser } from "@/app/userContext"; // Importa o contexto
+import { useUser } from "@/app/userContext";
 
 export default function Login() {
-  const [id, setId] = useState("");
   const [name, setName] = useState("");
   const [search, setSearch] = useState("");
   const [senha, setSenha] = useState("");
   const [erroSenha, setErroSenha] = useState(false);
   const [usuarios, setUsuarios] = useState<UsuarioDatabase[]>([]);
   const Usuarios = useUsuarioDatabase();
-  
-  const { setUsuario } = useUser(); // Obtém a função para armazenar o usuário logado
+  const { setUsuario } = useUser();
+
+  const fadeAnim = useRef(new Animated.Value(0)).current;
+
+  useEffect(() => {
+    Animated.timing(fadeAnim, {
+      toValue: 1,
+      duration: 600,
+      useNativeDriver: true,
+    }).start();
+  }, []);
 
   async function checkLog() {
     try {
@@ -32,21 +40,16 @@ export default function Login() {
 
       if (existenciaNome() && existenciaSenha()) {
         Alert.alert("Login bem-sucedido!", "Redirecionando...");
-
-        const searchID = await Usuarios.searchName(name)
-        
+        const searchID = await Usuarios.searchName(name);
         const IdparaLogin = searchID[0].id;
-        
+
         const usuarioLogado = {
           id: IdparaLogin,
-          name: name,
-          senha: senha
+          name,
+          senha,
         };
 
-        // Salva os dados no contexto
         setUsuario(usuarioLogado);
-
-        // Redireciona para a Home
         router.push("/paginaHome");
       } else {
         Alert.alert("Usuário não encontrado", "Cadastre-se ou verifique as informações.");
@@ -77,23 +80,93 @@ export default function Login() {
   }
 
   return (
-    <View style={{ flex: 1, justifyContent: "center", padding: 32, gap: 16 }}>
-      <Input placeholder="Nome" onChangeText={setName} value={name} />
-      <Input 
-        placeholder="Senha" 
-        onChangeText={passwordValidantion} 
-        secureTextEntry 
-        autoCapitalize="none" 
+    <Animated.View
+      style={{
+        flex: 1,
+        backgroundColor: "#f5f5f5",
+        paddingHorizontal: 24,
+        justifyContent: "center",
+        opacity: fadeAnim,
+      }}
+    >
+      <Text
         style={{
-          borderWidth: 2,
-          borderColor: erroSenha ? "red" : "green",
-          padding: 10,
-          borderRadius: 5,
+          fontSize: 28,
+          fontWeight: "bold",
+          marginBottom: 24,
+          textAlign: "center",
+          color: "#333",
+        }}
+      >
+        Bem-vindo de volta!
+      </Text>
+
+      <Input
+        placeholder="Nome"
+        onChangeText={setName}
+        value={name}
+        style={{
+          backgroundColor: "#fff",
+          borderRadius: 12,
+          padding: 14,
+          fontSize: 16,
+          shadowColor: "#000",
+          shadowOffset: { width: 0, height: 4 },
+          shadowOpacity: 0.1,
+          shadowRadius: 6,
+          elevation: 2,
+          borderWidth: 1.5,
+          borderColor: "#dcdcdc",
         }}
       />
-      <Button title="Entrar" onPress={checkLog} />
-      <Link href={"/"}>Cadastrar-se</Link>
-      
-    </View>
+
+      <Input
+        placeholder="Senha"
+        onChangeText={passwordValidantion}
+        secureTextEntry
+        autoCapitalize="none"
+        style={{
+          backgroundColor: "#fff",
+          borderRadius: 12,
+          padding: 14,
+          fontSize: 16,
+          marginTop: 12,
+          shadowColor: "#000",
+          shadowOffset: { width: 0, height: 4 },
+          shadowOpacity: 0.1,
+          shadowRadius: 6,
+          elevation: 2,
+          borderWidth: 1.5,
+          borderColor: erroSenha ? "#e74c3c" : "#2ecc71",
+        }}
+      />
+
+      <TouchableOpacity
+        onPress={checkLog}
+        style={{
+          marginTop: 20,
+          backgroundColor: "#4f46e5",
+          paddingVertical: 14,
+          borderRadius: 12,
+          alignItems: "center",
+          shadowColor: "#000",
+          shadowOffset: { width: 0, height: 2 },
+          shadowOpacity: 0.2,
+          shadowRadius: 4,
+          elevation: 2,
+        }}
+      >
+        <Text style={{ color: "#fff", fontSize: 16, fontWeight: "bold" }}>Entrar</Text>
+      </TouchableOpacity>
+
+      <View style={{ marginTop: 16, alignItems: "center" }}>
+        <Text style={{ color: "#555" }}>
+          Ainda não tem conta?{" "}
+          <Link href={"/"} style={{ color: "#4f46e5", fontWeight: "bold" }}>
+            Cadastre-se
+          </Link>
+        </Text>
+      </View>
+    </Animated.View>
   );
 }
