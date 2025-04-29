@@ -32,9 +32,20 @@ export function useUsuarioDatabase() {
 
   async function searchName(name:string) {
     try {
-      const query = "SELECT * FROM usuarios WHERE name LIKE ?"
+      const query = "SELECT * FROM usuarios WHERE name LIKE ?";
 
-      const response = await database.getAllAsync<UsuarioDatabase>(query, `%${name}%`)
+      const response = await database.getAllAsync<UsuarioDatabase>(query, `%${name}%`);
+      return response;
+
+    } catch (error) {
+      throw error;
+    }
+  }
+
+  async function deleteName(name:string) {
+    try {
+      const query = "DELETE * FROM usuarios WHERE name LIKE ?";
+      const response = await database.getAllAsync<UsuarioDatabase>(query, `%${name}%`);
       return response;
 
     } catch (error) {

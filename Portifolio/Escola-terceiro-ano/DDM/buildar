@@ -1,0 +1,7 @@
+npx expo install eas-cli
+npx eas init
+APK:'
+npx eas build --plataform android --profile preview
+AAB:
+npx eas build --plataform android --profile production
+

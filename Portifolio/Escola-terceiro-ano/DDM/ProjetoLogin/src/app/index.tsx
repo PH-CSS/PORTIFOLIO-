@@ -24,7 +24,7 @@ export default function Index() {
     }).start();
   }, []);
 
-  async function create() {
+  async function createUser() {
     try {
       if (senha.length < 4) {
         return Alert.alert("Tamanho da senha", "A senha precisa ter mais que 4 letras");
@@ -126,7 +126,7 @@ export default function Index() {
       />
 
       <TouchableOpacity
-        onPress={create}
+        onPress={createUser}
         style={{
           marginTop: 20,
           backgroundColor: "#4f46e5",
