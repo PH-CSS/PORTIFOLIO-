@@ -1,45 +1,21 @@
-// caso precise ver a lsita de usuarios é só uar esse arquivo com flatlist
-
-// import { UsuariosList } from "@/components/usuarios";
-
-// const [search, setSearch] = useState("");
-
-// const Usuarios = useUsuarioDatabase()
-
-// async function list() {
-//   try {
-//     const response = await Usuarios.searchName(search)
-//     setUsuarios(response)
-//   } catch (error) {
-//     throw error
-//   }
-// }
-
-// useEffect(() => {
-//   list()
-// },[search])
-
-// <FlatList
-// data={usuarios}
-// keyExtractor={(item) => String(item.id)}
-// renderItem={({ item }) =><UsuariosList data={item}/>}
-// />
-
 import { Pressable, PressableProps, Text } from "react-native";
 
-type Props = PressableProps &{
-  data:{
-    name:string,
-    senha:string
-  }
-}
+type Usuario = {
+  id: number;
+  senha:string;
+  name: string;
+};
 
-export function UsuariosList({data, ...rest}:Props) {
+type Props = PressableProps & {
+  data: Usuario;
+};
+
+export function UsuariosList({ data, ...rest }: Props) {
   return (
-  <Pressable {...rest}>
-    <Text>
-      {data.senha} - {data.name}
-    </Text>
-  </Pressable>
-  )
+    <Pressable {...rest} style={{ padding: 10 }}>
+      <Text style={{ fontWeight: "bold" }}>ID: {data.id}</Text>
+      <Text>Nome: {data.name}</Text>
+      <Text>senha: {data.senha}</Text>
+    </Pressable>
+  );
 }

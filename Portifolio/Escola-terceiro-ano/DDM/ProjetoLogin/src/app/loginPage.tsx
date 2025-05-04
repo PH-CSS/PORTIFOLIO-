@@ -1,9 +1,11 @@
 import { View, Text, TouchableOpacity, Alert, Animated } from "react-native";
 import { useEffect, useState, useRef } from "react";
 import { router, Link } from "expo-router";
+
 import { Input } from "@/components/input";
 import { useUsuarioDatabase, UsuarioDatabase } from "@/database/useUsuarioDatabase";
 import { useUser } from "@/app/userContext";
+import AsyncStorage from "@react-native-async-storage/async-storage";
 
 export default function Login() {
   const [name, setName] = useState("");
@@ -40,6 +42,8 @@ export default function Login() {
 
       if (existenciaNome() && existenciaSenha()) {
         Alert.alert("Login bem-sucedido!", "Redirecionando...");
+
+        // Busca pelo ID do usuário
         const searchID = await Usuarios.searchName(name);
         const IdparaLogin = searchID[0].id;
 
@@ -49,8 +53,11 @@ export default function Login() {
           senha,
         };
 
+        // Salva o usuário no contexto e no AsyncStorage
         setUsuario(usuarioLogado);
-        router.push("/paginaHome");
+        await AsyncStorage.setItem("@usuario", JSON.stringify(usuarioLogado));
+
+        router.push("/tabs/paginaHome");
       } else {
         Alert.alert("Usuário não encontrado", "Cadastre-se ou verifique as informações.");
       }
@@ -98,7 +105,7 @@ export default function Login() {
           color: "#333",
         }}
       >
-        Bem-vindo de volta!
+        Entrar na conta!
       </Text>
 
       <Input
